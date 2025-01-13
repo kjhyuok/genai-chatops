@@ -21,6 +21,7 @@ AWS를 활용하여 ChatOps 환경을 구축하고 관리하기 위한 프로젝
 - AWS 이벤트에 대한 실시간 알림 전송
 - Slack 또는 Microsoft Teams에서 명령 실행
 - DevOps 및 운영 워크플로우 간소화
+![image](https://github.com/user-attachments/assets/f3010c15-238e-4753-93cd-c397c3519a2e)
 
 ---
 
