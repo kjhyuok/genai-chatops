@@ -29,6 +29,8 @@ AWS를 활용하여 ChatOps 환경을 구축하고 관리하기 위한 프로젝
 ## 아키텍처 개요
 
 아래는 이 프로젝트의 기본 아키텍처입니다:
+![image](https://github.com/user-attachments/assets/4a45f49c-8924-4527-92e6-a613364e96c0)
+
 
 1. **AWS Lambda**: Slack 또는 Teams의 요청을 처리.
 2. **Amazon API Gateway**: Lambda 함수와 통신하는 HTTP 엔드포인트 제공.
