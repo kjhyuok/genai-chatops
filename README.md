@@ -22,14 +22,17 @@ AWS를 활용하여 ChatOps 환경을 구축하고 관리하기 위한 프로젝
 - Slack 또는 Microsoft Teams에서 명령 실행
 - DevOps 및 운영 워크플로우 간소화
   
-![image](https://github.com/user-attachments/assets/f3010c15-238e-4753-93cd-c397c3519a2e)
+<img width="1277" alt="image" src="https://github.com/user-attachments/assets/b62f1c30-dad1-4943-9d15-15eeb223ca2a" />
+
 
 ---
 
 ## 아키텍처 개요
 
 아래는 이 프로젝트의 기본 아키텍처입니다:
-![image](https://github.com/user-attachments/assets/4a45f49c-8924-4527-92e6-a613364e96c0)
+
+<img width="1474" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
+
 
 
 1. **AWS Lambda**: Slack 또는 Teams의 요청을 처리.
