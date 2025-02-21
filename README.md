@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/30a81c3b-8356-4cd4-9686-14c38bf57218)# 🤖AWS GenAI를 활용한 IT 서비스 운영 자동화
+# 🤖AWS GenAI를 활용한 IT 서비스 운영 자동화
 
 현대의 IT 인프라 환경은 그 규모와 복잡성이 기하급수적으로 증가하고 있습니다. 클라우드 네이티브 아키텍처의 도입이나 마이크로서비스 기반 애플리케이션의 확산으로 기업의 IT 운영팀이 대응해야 할 영역은 지속적으로 확장되고 있습니다. 특히 시스템 전반에서 발생하는 다양한 종류의 로그 데이터, 메트릭 그리고 메시지들을 효과적으로 분석하고 신속하게 대응하는 것이 중요한 과제로 떠오르고 있습니다. 
 1. 신속한 장애 대응의 필요성
@@ -47,11 +47,12 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 
 <img width="1474" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
 <img width="1474" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
-
-단계 1: Knowledge Bases 구성
-단계 2: 로그 모니터링 및 알림 전송
-단계 3: 이슈 분석
-단계 4: 분석내용의 등록 및 자산화
+이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.
+단계 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br>
+단계 2: Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br>
+단계 3: Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
+(실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br>
+단계 4: AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
 
 ---
 
