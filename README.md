@@ -33,20 +33,20 @@
 이 Workshop을 완료하면 다음과 같이 IT서비스 운영에 활용되는 Usecase를 경험해 볼 수 있습니다.
 
 Usecase 1 : 운영중 수신되는 Error Message에 대한 빠른 분석
-<img width="1277" alt="image" src="https://github.com/user-attachments/assets/442c812a-98de-48b7-8e1e-6aa33da3af79" />
+<img width="780" alt="image" src="https://github.com/user-attachments/assets/442c812a-98de-48b7-8e1e-6aa33da3af79" />
 
 Usecase 2 : Knowledge Bases 를 통한 문제의 근본 원인 분석 및 해결 방안 제시
-<img width="1277" alt="image" src="https://github.com/user-attachments/assets/a5466e02-aeb8-40c0-93c5-025fbe60deb2" />
+<img width="780" alt="image" src="https://github.com/user-attachments/assets/a5466e02-aeb8-40c0-93c5-025fbe60deb2" />
 
 Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
-<img width="1277" alt="image" src="https://github.com/user-attachments/assets/a21f8fce-9c7a-49f0-8d15-df25cf3b0014" />
+<img width="780" alt="image" src="https://github.com/user-attachments/assets/a21f8fce-9c7a-49f0-8d15-df25cf3b0014" />
 
 ## 전체 아키텍처 및 흐름
 
 아래는 이 Workshop을 통해 구현될 전체 아키텍처입니다:
 
-<img width="1474" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
-<img width="1474" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
+<img width="1200" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
+<img width="1200" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
 이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br>
 단계 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br>
 단계 2: Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br>
