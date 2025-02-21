@@ -1,4 +1,4 @@
-# 💻AWS GenAI를 활용한 IT 서비스 운영 자동화
+# 🤖AWS GenAI를 활용한 IT 서비스 운영 자동화
 
 AWS를 활용하여 ChatOps 환경을 구축하고 관리하기 위한 프로젝트입니다. 이 프로젝트는 AWS Lambda, Amazon API Gateway, AWS Chatbot 등을 사용하여 Slack 또는 Microsoft Teams와 같은 협업 도구와 통합됩니다.
 
