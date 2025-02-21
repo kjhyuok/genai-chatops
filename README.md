@@ -17,14 +17,14 @@
 
 ---
 
-## 프로젝트 소개
+## 프로젝트 소개: 생성형 AI 기반 문제 분석 및 활용
 
-이 프로젝트는 ChatOps를 통해 운영 활동을 중앙화하고, AWS 리소스와 상호작용하며 알림 및 명령 실행을 지원합니다. 주요 기능은 다음과 같습니다:
-- AWS 이벤트에 대한 실시간 알림 전송
-- Slack 또는 Microsoft Teams에서 명령 실행
-- DevOps 및 운영 워크플로우 간소화
+이 프로젝트는 위와 같은 문제를 지원하기 위해 AWS의 생성형 AI서비스와 기업에서 주로 활용중인 협업 도구인 Slack, Atlassian Confluence를 통합한 생성형 AI 기반 클라우드 운영 지원 솔루션을 소개할 예정입니다. 이 솔루션은 아래 그림과 같이 총 3개의 주요한 흐름으로 구성되어 있습니다.
+1. Slack에서의 협업 및 문제 해결(①,②,③,④,⑤)
+2. 분석 된 문제를 요약 후 게시글 생성(⑥)
+3. 지속적인 학습 및 개선활용(⑦)
   
-<img width="1277" alt="image" src="https://github.com/user-attachments/assets/b62f1c30-dad1-4943-9d15-15eeb223ca2a" />
+<img width="1277" alt="image" src="![image](https://github.com/user-attachments/assets/e568b940-b637-4421-add3-311c6c020d85)" />
 
 
 ---
