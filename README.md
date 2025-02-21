@@ -24,7 +24,7 @@
 2. 분석 된 문제를 요약 후 게시글 생성(⑥)
 3. 지속적인 학습 및 개선활용(⑦)
   
-<img width="1277" alt="image" src="![image](https://github.com/user-attachments/assets/e568b940-b637-4421-add3-311c6c020d85)" />
+<img width="1277" alt="image" src="https://github.com/user-attachments/assets/e568b940-b637-4421-add3-311c6c020d85" />
 
 
 ---
