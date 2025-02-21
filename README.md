@@ -10,8 +10,6 @@ AWS를 활용하여 ChatOps 환경을 구축하고 관리하기 위한 프로젝
 3. [필수 조건](#필수-조건)
 4. [설치 및 설정](#설치-및-설정)
 5. [사용 방법](#사용-방법)
-6. [기여 방법](#기여-방법)
-7. [라이선스](#라이선스)
 
 ---
 
@@ -38,7 +36,7 @@ AWS를 활용하여 ChatOps 환경을 구축하고 관리하기 위한 프로젝
 1. **AWS Lambda**: Slack 또는 Teams의 요청을 처리.
 2. **Amazon API Gateway**: Lambda 함수와 통신하는 HTTP 엔드포인트 제공.
 3. **AWS Chatbot**: 알림 및 명령 처리를 위한 Slack/Teams 통합.
-4. **Amazon SNS**: 알림 메시지 전송.
+4. **Amazon Q(구 AWS Chatbot)**: 알림 메시지 전송.
 5. **Amazon CloudWatch**: 모니터링 및 경고 생성.
 
 ---
@@ -56,12 +54,12 @@ AWS를 활용하여 ChatOps 환경을 구축하고 관리하기 위한 프로젝
 ## 설치 및 설정
 
 ### 1️⃣ 코드 클론
-git clone https://github.com/your-repo/aws-chatops.git
-cd aws-chatops
+git clone h........
+cd aws-........
 
 ### 2️⃣ AWS 리소스 배포
 AWS CLI 또는 CloudFormation 템플릿을 사용하여 리소스를 배포합니다.
-aws cloudformation deploy --template-file template.yml --stack-name chatops-stack
+aws cloudformation deploy --template-file template.yml --stack-name chatops-........
 
 ### 3️⃣ Slack/Teams 통합 설정
 1. AWS Management Console에서 **AWS Chatbot** 서비스 열기.
@@ -75,23 +73,7 @@ AWS_REGION=us-east-1
 
 ---
 
-## 사용 방법
 
-### 1️⃣ 명령 실행
-Slack 채널에서 다음과 같은 명령어를 입력하여 Lambda 함수를 호출합니다:
-
-### 2️⃣ 알림 수신
-AWS 이벤트(예: CloudWatch 경고)가 발생하면 지정된 채널로 알림이 전송됩니다.
-
----
-
-## 기여 방법
-
-1. 이 저장소를 포크합니다.
-2. 새로운 브랜치를 생성합니다: `git checkout -b feature/my-feature`
-3. 변경 사항을 커밋합니다: `git commit -m 'Add some feature'`
-4. 브랜치에 푸시합니다: `git push origin feature/my-feature`
-5. Pull Request를 생성합니다.
 
 ---
 
