@@ -24,12 +24,12 @@ Resources:
     Type: 'AWS::Lambda::Function'
     Properties:
       FunctionName: !Sub '${AWS::StackName}-gw-to-slack-function'
-      Handler: index.lambda_handler  # Python handler
+      Handler: lambda_function.lambda_handler
       Role: !GetAtt LambdaExecutionRole.Arn
       Code:
         S3Bucket: !Ref S3BucketLambdaCode
         S3Key: lambda-gw-to-slack.zip
-      Runtime: python3.9  # Python runtime
+      Runtime: python3.9
       Timeout: 30
       MemorySize: 128
       
@@ -37,12 +37,12 @@ Resources:
     Type: 'AWS::Lambda::Function'
     Properties:
       FunctionName: !Sub '${AWS::StackName}-msg-to-slack-function'
-      Handler: index.lambda_handler  # Python handler
+      Handler: lambda_function.lambda_handler
       Role: !GetAtt LambdaExecutionRole.Arn
       Code:
         S3Bucket: !Ref S3BucketLambdaCode
         S3Key: lambda-message-to-slack.zip
-      Runtime: python3.9  # Python runtime
+      Runtime: python3.9
       Timeout: 30
       MemorySize: 128
 
