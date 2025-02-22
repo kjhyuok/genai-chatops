@@ -8,7 +8,7 @@
 
 본 페이지는 AWS GenAI를 활용한 IT 서비스 운영 자동화를 직접 구현해 보기 위해 Workshop형태로 제작 되었습니다.<br>
 전체적인 내용은 2025년 2월 11일 게시된
-<a href="https://aws.amazon.com/ko/blogs/tech/generative-ai-incident-response-knowledge-base/" target="_blank">*AWS Tech Blog:</a> 를 통해 확인해 보실 수 있습니다.
+<a href="https://aws.amazon.com/ko/blogs/tech/generative-ai-incident-response-knowledge-base/" target="_blank">AWS Tech Blog</a> 를 통해 확인해 보실 수 있습니다.
 
 ---
 
