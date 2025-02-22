@@ -27,7 +27,8 @@
 2. Console 하단 CloudShell 오픈
 ![CloudFormation Template Upload2](./images/CloudFormation-2.png)
 
-3. 아래 명령어 실행
+
+4. 아래 명령어 실행
 ```shell
 git clone https://github.com/kevmyung/aws-kr-retail-cpg-genai.git
 aws cloudformation create-stack --stack-name gen-ai-workshop --template-body file://aws-kr-retail-cpg-genai/genai-workshop.yaml --capabilities CAPABILITY_NAMED_IAM
@@ -47,10 +48,9 @@ aws cloudformation create-stack --stack-name gen-ai-workshop --template-body fil
 
 2. 좌측 탭 하단의 **Model access** 버튼을 클릭하거나, 이 [링크](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/modelaccess)를 통해 이동합니다.
 
-3. Amazon & Anthropic 모델 전체를 선택하고, 하단의 **Save changes** 버튼을 누릅니다.
-   
-   ![모델 액세스 설정](./images/Model-Access.png)
+3. Amazon 전체 모델과 Anthropic 모델 중 Claude 3.5 Sonnet 을 선택하고, 하단의 **Save changes** 버튼을 누릅니다.
+ <img width="780" alt="image" src="https://github.com/user-attachments/assets/72c6b276-5201-4dde-b313-b84cff0a0eb9" />
 
-4. 잠시 후 모델의 Access status가 `Access granted`로 변경됩니다.
+5. 잠시 후 모델의 Access status가 `Access granted`로 변경됩니다.
 
 실습 준비가 완료되었습니다. 진행자의 안내에 따라 실습을 진행해 주세요.

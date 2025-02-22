@@ -6,6 +6,10 @@
 2. 지식의 자산화 필요성
 또한 장애가 해결된 이후에도 동일한 문제 발생 시 과거의 경험을 바탕으로 보다 빠르고 효율적으로 해결할 수 있다면 IT운영팀의 축적된 장애 대응 경험과 해결 노하우가 매우 중요한 자산입니다. 그래서 우리는 이러한 정보를 잘 요약된 내용으로 정리하여 추후 장애 시 활용한다면 장애의 빈도가 높은 모듈에 대한 개선 그리고 업무의 효율성을 높일 수 있습니다.
 
+본 페이지는 AWS GenAI를 활용한 IT 서비스 운영 자동화를 직접 구현해 보기 위해 Workshop형태로 제작 되었습니다.<br>
+전체적인 내용은 2025년 2월 11일 게시된
+<a href="https://aws.amazon.com/ko/blogs/tech/generative-ai-incident-response-knowledge-base/" target="_blank">AWS Tech Blog</a> 를 통해 확인해 보실 수 있습니다.
+
 ---
 
 ## 📋 목차
@@ -13,7 +17,7 @@
 2. [Workshop의 결과물](#Workshop의-결과물)
 3. [전체 아키텍처 및 흐름](#전체-아키텍처-및-흐름)
 4. [필수 조건 및 AWS 서비스 구성](#필수-조건-및-AWS-서비스-구성)
-5. [설치 및 설정](#설치-및-설정)
+5. [환경설정](#환경설정)
 
 ---
 
@@ -48,7 +52,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
 <br><br>
-이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br><br><br>
+이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 Step별로 구현해 보겠습니다.<br><br><br>
 
 * [Account Setting](SETUP.md) - AWS Account Setup(Workshop용 Account일 경우 참조)
 * [Preparations](cloudformation/README.md) - Workshop에 필요한 Resources(AWS Lambda Code, Amazon API GW 등)를 미리 배포
@@ -57,7 +61,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 * [Step3](detail/step3.md) - Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
   (실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br>
 * [Step4](detail/step4.md) - AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
-* [Step5](detail/step5.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
+* [CleanUp](detail/step5.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
 
 ---
 
@@ -81,8 +85,10 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 
 ---
 
-## 설치 및 설정: > [재영님 폴더 이동 링크](cloudformation/README.md)
+자\~ 이제 실습 준비를 위해 [환경설정](SETUP.md)으로 이동해 볼까요?
 <!--
+## 설치 및 설정: > [재영님 폴더 이동 링크](cloudformation/README.md)
+
 ### 1️⃣ 코드 클론
 git clone h........
 cd aws-........
