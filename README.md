@@ -48,7 +48,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
 <br>
-이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br><br>
+### 이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br><br>
 👉 단계 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br><br>
 👉 단계 2: Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br><br>
 👉 단계 3: Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
@@ -77,32 +77,25 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 
 ---
 
-## 설치 및 설정
-
+## 설치 및 설정 > 재영님 폴더 이동 링크
+<!--
 ### 1️⃣ 코드 클론
 git clone h........
 cd aws-........
 
 ### 2️⃣ AWS 리소스 배포
-AWS CLI 또는 CloudFormation 템플릿을 사용하여 리소스를 배포합니다.
-aws cloudformation deploy --template-file template.yml --stack-name chatops-........
+AWS CloudFormation 템플릿을 사용하여 리소스를 배포합니다.
+재영님 폴더 이동 메뉴 링크
 
-### 3️⃣ Slack/Teams 통합 설정
+### 3️⃣ Slack 설정
 1. AWS Management Console에서 **AWS Chatbot** 서비스 열기.
-2. Slack 또는 Microsoft Teams 채널 추가.
+2. Slack 채널 추가.
 3. 필요한 권한 부여 및 채널 URL 설정.
 
 ### 4️⃣ 환경 변수 구성
 `.env` 파일에 필요한 환경 변수를 추가합니다:
 SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
 AWS_REGION=us-east-1
-
+-->
 ---
 
-
-
----
-
-## 라이선스
-
-이 프로젝트는 MIT 라이선스를 따릅니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
