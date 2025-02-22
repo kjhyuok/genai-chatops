@@ -2,7 +2,7 @@
 
 # 변수 설정
 STACK_NAME="chatops-stack"
-AWS_REGION="ap-northeast-2"
+AWS_REGION="us-west-2"
 
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
 BUCKET_NAME="chatops-lambda-code-$AWS_ACCOUNT_ID"
