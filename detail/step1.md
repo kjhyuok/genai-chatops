@@ -18,6 +18,9 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 ## 1. Amazon Bedrock 메뉴에서 Knowledge Base 생성하기.<br>
 메뉴이동: [Amazon Bedrock Knowledge Bases](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/knowledge-bases)<br>
 
+![](https://static.us-east-1.prod.workshops.aws/public/88811a7e-410e-4614-835d-b5bdc1092470/static/images/kb_details.gif)
+
+
 <img width="666" alt="image" src="https://github.com/user-attachments/assets/44d2a571-10d2-4e97-8925-23f23cc8da05" /> 
 
 **1. 페이지에서 Knowledge Bases를 클릭하고 Create<br>**
@@ -51,6 +54,9 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 🚩**Atlassian Confluence를 Data source 선택하기**<br>
 앞서 Knowledge Bases를 최초 생성하는 과정에서 Amazon S3를 Data source 로 추가한 반 있습니다.<br> 
 이번에는 팀내 협업 도구로 많이들 활용하시는 Atlassian Confluence를 Data source 로 추가해 보겠습니다.
+
+Secret Manager Screts 생성하기
+wiki_api_key/wiki_url/wiki_user 가 디폴트로 제공하기 
 
 1. Knowledge Base 메뉴에서 이전 단계에서 생성이 완료된 **knowledge-base-quick-start-2025** 로 진입합니다.
 2. Data source > Add > Third party data sources 에서 **Confluence** 를 선택하고 Next
