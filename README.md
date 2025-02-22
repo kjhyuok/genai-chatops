@@ -59,13 +59,12 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 
 ## 필수 조건 및 AWS 서비스 구성
 
-이 Workshop을 수행하려면 다음이 필요합니다:
-- AWS 계정
-- Slack 또는 Microsoft Teams 워크스페이스
-- AWS CLI 설치 및 구성
-- Node.js 또는 Python (Lambda 함수 개발용)
+📌 이 Workshop을 수행하려면 다음이 준비되어야 합니다:
+- AWS Account(실습용 제공)
+- Slack 개인계정
+- Atlassian Confluence Account(강사계정 활용예정)
 
-이 Workshop에서 활용되는 서비스 소개 입니다:
+📌 이 Workshop에서 활용되는 서비스는 다음과 같습니다:
 - [Amazon Bedrock](https://aws.amazon.com/ko/bedrock/?gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDBE17GRP0CN9_RYey5dt_x4D8ZOkbwhjaOYxXRQJBIjXvMEX_-iaqsaAsBpEALw_wcB&trk=24a8f13a-f5db-4127-bcb7-8b2876aa4265&sc_channel=ps&ef_id=Cj0KCQiAu8W6BhC-ARIsACEQoDBE17GRP0CN9_RYey5dt_x4D8ZOkbwhjaOYxXRQJBIjXvMEX_-iaqsaAsBpEALw_wcB:G:s&s_kwcid=AL!4422!3!692062155749!e!!g!!amazon%20bedrock!21058131112!157173586057): Amazon Bedrock은 AWS의 생성형 AI 서비스로, Claude, AI21 Labs의 Jurassic-2, AWS Titan과 같은 대규모 언어 모델(LLM)을 제공합니다. 이를 통해 로그 분석, 문제 원인 파악, 해결 방안 제안, 자동 요약 생성 등 다양한 AI 작업을 수행할 수 있습니다.
 - [Agents for Amazon Bedrock](https://aws.amazon.com/ko/bedrock/agents/): 워크플로를 간소화하고 반복적인 작업을 자동화며 사용자 요청을 처리하고, 필요한 정보를 수집하며, 효율적으로 응답을 생성하는 역할을 합니다.
 - [Amazon Bedrock Knowledge Bases](https://aws.amazon.com/ko/bedrock/knowledge-bases/): Amazon Bedrock의 파운데이션 모델(FM)을 회사 데이터에 안전하게 연결하여 검색 증강 생성(RAG)을 지원할 수 있습니다. 추가 데이터에 액세스하면 지속적으로 FM을 재훈련할 필요 없이 관련성이 높고 상황에 맞는 정확한 응답을 생성하는 데 도움이 됩니다. 운영팀의 경험과 과거 문제 해결 사례를 체계적으로 저장하여 LLM에게 학습 자료를 제공합니다. 이를 통해 응답은 지속적으로 개선되고 더 나은 결과를 도출할 수 있습니다. [RAG(Retrieval Augmented Generation)](https://aws.amazon.com/ko/what-is/retrieval-augmented-generation/) 기술을 활용하여 데이터를 검색하고, 기초 모델의 프롬프트를 보강하여 보다 정확하고 관련성 높은 응답을 생성하도록 돕습니다.
