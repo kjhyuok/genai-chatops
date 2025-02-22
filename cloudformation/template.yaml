@@ -1,0 +1,165 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template for API Gateway, S3 and Lambda'
+
+Parameters:
+  S3BucketLambdaCode:
+    Type: String
+    Description: 'S3 bucket containing Lambda code'
+  
+Resources:
+  # S3 Bucket
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Sub '${AWS::StackName}-bucket-${AWS::AccountId}'
+      AccessControl: Private
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  # Lambda Function
+  FirstLambdaFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-gw-to-slack-function'
+      Handler: index.lambda_handler  # Python handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Code:
+        S3Bucket: !Ref S3BucketLambdaCode
+        S3Key: lambda-gw-to-slack.zip
+      Runtime: python3.9  # Python runtime
+      Timeout: 30
+      MemorySize: 128
+      
+  SecondLambdaFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-msg-to-slack-function'
+      Handler: index.lambda_handler  # Python handler
+      Role: !GetAtt LambdaExecutionRole.Arn
+      Code:
+        S3Bucket: !Ref S3BucketLambdaCode
+        S3Key: lambda-message-to-slack.zip
+      Runtime: python3.9  # Python runtime
+      Timeout: 30
+      MemorySize: 128
+
+  # Lambda Execution Role
+  LambdaExecutionRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  # API Gateway
+  ApiGateway:
+    Type: 'AWS::ApiGateway::RestApi'
+    Properties:
+      Name: !Sub '${AWS::StackName}-api'
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
+
+  # API Gateway Resource
+  FirstApiResource:
+    Type: 'AWS::ApiGateway::Resource'
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ParentId: !GetAtt ApiGateway.RootResourceId
+      PathPart: 'gw-to-slack'
+
+  # API Gateway Method
+  FirstApiMethod:
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !Ref FirstApiResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${FirstLambdaFunction.Arn}/invocations'
+
+  # Lambda Permission for API Gateway
+  FirstLambdaPermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName: !Ref FirstLambdaFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/*/gw-to-slack'
+
+  # Second Lambda API Resources
+  SecondApiResource:
+    Type: 'AWS::ApiGateway::Resource'
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ParentId: !GetAtt ApiGateway.RootResourceId
+      PathPart: 'msg-to-slack'
+
+  SecondApiMethod:
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !Ref SecondApiResource
+      HttpMethod: POST
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS_PROXY
+        IntegrationHttpMethod: POST
+        Uri: !Sub 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SecondLambdaFunction.Arn}/invocations'
+
+  # Lambda Permission for API Gateway
+  SecondLambdaPermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName: !Ref SecondLambdaFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/*/msg-to-slack'
+
+
+  # API Gateway Deployment
+  ApiDeployment:
+    Type: 'AWS::ApiGateway::Deployment'
+    DependsOn:
+      - FirstApiMethod
+      - SecondApiMethod
+    Properties:
+      RestApiId: !Ref ApiGateway
+
+  # API Gateway Stage
+  ApiStage:
+    Type: 'AWS::ApiGateway::Stage'
+    Properties:
+      DeploymentId: !Ref ApiDeployment
+      RestApiId: !Ref ApiGateway
+      StageName: 'prod'
+
+Outputs:
+  BucketName:
+    Description: 'S3 Bucket Name'
+    Value: !Ref S3Bucket
+  
+  FirstLambdaFunction:
+      Value: !GetAtt FirstLambdaFunction.Arn
+  SecondLambdaFunction:
+      Value: !GetAtt SecondLambdaFunction.Arn
+
+  FirstApiEndpoint:
+    Description: 'First API Gateway endpoint URL'
+    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/gw-to-slack'
+  
+  SecondApiEndpoint:
+    Description: 'Second API Gateway endpoint URL'
+    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/msg-to-slack'
