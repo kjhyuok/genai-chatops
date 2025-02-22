@@ -49,19 +49,12 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
 <br><br>
 이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br><br><br>
-👉 [Preparations](cloudformation/README.md) - 실습 사전 준비<br><br>
-👉 [Step1](detail/step1.md): IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br><br>
-👉 [Step2](detail/step2.md): Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br><br>
-👉 [Step3](detail/step3.md): Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
-(실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br><br>
-👉 [Step4](detail/step4.md): AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
-👉 [Step5](detail/step5.md): CleanUp: 실습에 사용했던 모든 자원을 정리<br>
 
 * [Preparations](cloudformation/README.md) - 실습 사전 준비
-* [Step1](detail/step1.md) - IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br><br>
-* [Step2](detail/step2.md) - Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br><br>
+* [Step1](detail/step1.md) - IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br>
+* [Step2](detail/step2.md) - Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br>
 * [Step3](detail/step3.md) - Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
-  (실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br><br>
+  (실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br>
 * [Step4](detail/step4.md) - AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
 * [Step5](detail/step5.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
 
