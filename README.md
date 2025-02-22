@@ -47,13 +47,15 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
-<br>
-## 이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br><br>
-👉 단계 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br><br>
-👉 단계 2: Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br><br>
-👉 단계 3: Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
+<br><br>
+이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br><br><br>
+👉 [Preparations](cloudformation/README.md) - 실습 사전 준비<br><br>
+👉 [Step1](detail/step1.md): IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br><br>
+👉 [Step2](detail/step2.md): Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br><br>
+👉 [Step3](detail/step3.md): Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
 (실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br><br>
-👉 단계 4: AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
+👉 [Step4](detail/step4.md): AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
+👉 [Step5](detail/step5.md): CleanUp: 실습에 사용했던 모든 자원을 정리<br>
 
 ---
 
@@ -63,6 +65,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 - AWS Account(실습용 제공)
 - Slack 개인계정
 - Atlassian Confluence Account(강사계정 활용예정)
+- 인터넷 브라우저: 이 워크샵에서는 최신 버전의 Chrome 또는 Firefox를 사용하는 것이 좋습니다.
 
 📌 이 Workshop에서 활용되는 서비스는 다음과 같습니다:
 - [Amazon Bedrock](https://aws.amazon.com/ko/bedrock/?gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDBE17GRP0CN9_RYey5dt_x4D8ZOkbwhjaOYxXRQJBIjXvMEX_-iaqsaAsBpEALw_wcB&trk=24a8f13a-f5db-4127-bcb7-8b2876aa4265&sc_channel=ps&ef_id=Cj0KCQiAu8W6BhC-ARIsACEQoDBE17GRP0CN9_RYey5dt_x4D8ZOkbwhjaOYxXRQJBIjXvMEX_-iaqsaAsBpEALw_wcB:G:s&s_kwcid=AL!4422!3!692062155749!e!!g!!amazon%20bedrock!21058131112!157173586057): Amazon Bedrock은 AWS의 생성형 AI 서비스로, Claude, AI21 Labs의 Jurassic-2, AWS Titan과 같은 대규모 언어 모델(LLM)을 제공합니다. 이를 통해 로그 분석, 문제 원인 파악, 해결 방안 제안, 자동 요약 생성 등 다양한 AI 작업을 수행할 수 있습니다.
