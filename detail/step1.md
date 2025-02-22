@@ -104,6 +104,7 @@ Amazon Bedrock default parser
 
 ## Amazon Bedrock Knowledge Bases에 Sync 완료된 S3, Confluence 데이터 테스트 하기
 1. Amazon Bedrock Knowledge Bases 콘솔에서 테스트 해 볼 수 있습니다.
+<img width="816" alt="image" src="https://github.com/user-attachments/assets/20634edb-6bf6-4605-9195-ed333d4eb86e" />
 
 
 
