@@ -163,3 +163,30 @@ Outputs:
   SecondApiEndpoint:
     Description: 'Second API Gateway endpoint URL'
     Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/msg-to-slack'
+
+Resources:
+  WSParticipantRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: WSParticipantRole
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: cloudformation.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: CloudFormationAccessPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "cloudformation:CreateChangeSet"
+                  - "cloudformation:DescribeChangeSet"
+                  - "cloudformation:ExecuteChangeSet"
+                  - "cloudformation:GetTemplate"
+                  - "cloudformation:DeleteChangeSet"
+                Resource:
+                  - "arn:aws:cloudformation:us-west-2:*:*"
