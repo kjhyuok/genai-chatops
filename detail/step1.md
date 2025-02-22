@@ -112,7 +112,7 @@ Amazon Bedrock default parser
 여기까지 업무자산을 Amazon Bedrock Knowledge Bases로 구성하고 동기화 된 결과를 테스트 까지 완료하셨습니다.
 
 ### 이제, Amazon Bedrock Agent 를 생성하고 위에서 생성한 Amazon Bedrock Knowledge Bases와 연결하는 다음 단계 실습으로 이동합니다.<br>
-[Step 2: Amazon Bedrock Agent 생성 및 Knowledge Bases와 연동](detail/step2.md)
+[Step 2: Amazon Bedrock Agent 생성 및 Knowledge Bases와 연동](step2.md)
 
 
 
