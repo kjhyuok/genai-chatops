@@ -65,17 +65,14 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 - Node.js 또는 Python (Lambda 함수 개발용)
 
 이 Workshop에서 활용되는 서비스 소개 입니다:
-Amazon Bedrock: Amazon Bedrock은 AWS의 생성형 AI 서비스로, Claude, AI21 Labs의 Jurassic-2, AWS Titan과 같은 대규모 언어 모델(LLM)을 제공합니다. 이를 통해 로그 분석, 문제 원인 파악, 해결 방안 제안, 자동 요약 생성 등 다양한 AI 작업을 수행할 수 있습니다.
-Agents for Amazon Bedrock: 워크플로를 간소화하고 반복적인 작업을 자동화며 사용자 요청을 처리하고, 필요한 정보를 수집하며, 효율적으로 응답을 생성하는 역할을 합니다.
-Amazon Bedrock Knowledge Bases: Amazon Bedrock의 파운데이션 모델(FM)을 회사 데이터에 안전하게 연결하여 검색 증강 생성(RAG)을 지원할 수 있습니다. 추가 데이터에 액세스하면 지속적으로 FM을 재훈련할 필요 없이 관련성이 높고 상황에 맞는 정확한 응답을 생성하는 데 도움이 됩니다. 운영팀의 경험과 과거 문제 해결 사례를 체계적으로 저장하여 LLM에게 학습 자료를 제공합니다. 이를 통해 응답은 지속적으로 개선되고 더 나은 결과를 도출할 수 있습니다. RAG(Retrieval Augmented Generation) 기술을 활용하여 데이터를 검색하고, 기초 모델의 프롬프트를 보강하여 보다 정확하고 관련성 높은 응답을 생성하도록 돕습니다. 아래는 RAG 의 기본적인 단계를 소개 합니다.
-단계: 데이터 소스에서 문서를 가져와 벡터 데이터베이스에 저장합니다.
-단계: 사용자 쿼리에 대해 적절한 데이터를 검색하여 기초 모델 프롬프트를 보강합니다.
-단계: 검색된 정보를 기반으로 자연어 응답을 생성하거나 직접 인용문을 제공합니다
-AWS Lambda :이벤트에 대한 응답으로 코드를 실행하고 컴퓨팅 리소스를 자동으로 관리하는 컴퓨팅 서비스이며, 이 솔루션에서는 서버리스 컴퓨팅 환경에서 각종 로그 데이터 수신 및 Slack 내 Event 수행과 대화중인 Thread에 대해 Prompt를 통해 Atlassian Confluence 로의 Reporting 을 수행하게 됩니다. 이 과정을 수행하며 Atlassian Confluence는 지속적인 장애 히스토리를 업데이트 하며 향후 자산으로 활용할 수 있게 됩니다.
-AWS Chatbot: AWS Chatbot은 Microsoft Teams, Slack과 같은 협업 도구와 AWS 리소스를 연결합니다. 특히, 2024년 9월 17일에 출시된 Slack과 Agents for Amazon Bedrock 간 상호작용 기능은 운영팀이 Slack 내에서 직접 LLM과의 대화를 통해 장애 대응과 해결을 수행할 수 있도록 지원합니다.
-AWS Secrets Manager : 데이터베이스나 애플리케이션의 보안 인증, OAuth 토큰, API 키 및 기타 암호를 관리, 검색, 교체할 수 있습니다. 이 블로그에서는 AWS Lambda가 수행할 Task에 필요한 협업도구의 인증 정보들를 Secrets 으로 저장하고 AWS Lambda의 환경변수로 활용했습니다.
-Slack :운영팀이 익숙하게 사용하는 협업 도구로 Message 전달용 Bot과 연동하고AWS Chatbot과 통합하여 실시간 문제 해결을 Agents connector 로 수행합니다.
-Atlassian Confluence : 팀이 프로젝트나 아이디어를 통해 작업을 체계적으로 조직하고 공유하여 모든 팀원이 협업할 수 있는 도구이며, 팀의 지속적인 Knowledge Bases으로 활용 됩니다.
+- Amazon Bedrock: Amazon Bedrock은 AWS의 생성형 AI 서비스로, Claude, AI21 Labs의 Jurassic-2, AWS Titan과 같은 대규모 언어 모델(LLM)을 제공합니다. 이를 통해 로그 분석, 문제 원인 파악, 해결 방안 제안, 자동 요약 생성 등 다양한 AI 작업을 수행할 수 있습니다.
+- Agents for Amazon Bedrock: 워크플로를 간소화하고 반복적인 작업을 자동화며 사용자 요청을 처리하고, 필요한 정보를 수집하며, 효율적으로 응답을 생성하는 역할을 합니다.
+- Amazon Bedrock Knowledge Bases: Amazon Bedrock의 파운데이션 모델(FM)을 회사 데이터에 안전하게 연결하여 검색 증강 생성(RAG)을 지원할 수 있습니다. 추가 데이터에 액세스하면 지속적으로 FM을 재훈련할 필요 없이 관련성이 높고 상황에 맞는 정확한 응답을 생성하는 데 도움이 됩니다. 운영팀의 경험과 과거 문제 해결 사례를 체계적으로 저장하여 LLM에게 학습 자료를 제공합니다. 이를 통해 응답은 지속적으로 개선되고 더 나은 결과를 도출할 수 있습니다. RAG(Retrieval Augmented Generation) 기술을 활용하여 데이터를 검색하고, 기초 모델의 프롬프트를 보강하여 보다 정확하고 관련성 높은 응답을 생성하도록 돕습니다.
+- AWS Lambda :이벤트에 대한 응답으로 코드를 실행하고 컴퓨팅 리소스를 자동으로 관리하는 컴퓨팅 서비스이며, 이 솔루션에서는 서버리스 컴퓨팅 환경에서 각종 로그 데이터 수신 및 Slack 내 Event 수행과 대화중인 Thread에 대해 Prompt를 통해 Atlassian Confluence 로의 Reporting 을 수행하게 됩니다. 이 과정을 수행하며 Atlassian Confluence는 지속적인 장애 히스토리를 업데이트 하며 향후 자산으로 활용할 수 있게 됩니다.
+- Amazon Q Developer(구 AWS Chatbot): Amazon Q Developer는 Microsoft Teams, Slack과 같은 협업 도구와 AWS 리소스를 연결합니다. 특히, 2024년 9월 17일에 출시된 Slack과 Agents for Amazon Bedrock 간 상호작용 기능은 운영팀이 Slack 내에서 직접 LLM과의 대화를 통해 장애 대응과 해결을 수행할 수 있도록 지원합니다.
+- AWS Secrets Manager : 데이터베이스나 애플리케이션의 보안 인증, OAuth 토큰, API 키 및 기타 암호를 관리, 검색, 교체할 수 있습니다. 이 블로그에서는 AWS Lambda가 수행할 Task에 필요한 협업도구의 인증 정보들를 Secrets 으로 저장하고 AWS Lambda의 환경변수로 활용했습니다.
+- Slack :운영팀이 익숙하게 사용하는 협업 도구로 Message 전달용 Bot과 연동하고AWS Chatbot과 통합하여 실시간 문제 해결을 Agents connector 로 수행합니다.
+- Atlassian Confluence : 팀이 프로젝트나 아이디어를 통해 작업을 체계적으로 조직하고 공유하여 모든 팀원이 협업할 수 있는 도구이며, 팀의 지속적인 Knowledge Bases으로 활용 됩니다.
 
 ---
 
