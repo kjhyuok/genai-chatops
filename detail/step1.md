@@ -58,6 +58,18 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 Secret Manager Screts 생성하기
 wiki_api_key/wiki_url/wiki_user 가 디폴트로 제공하기 
 
+
+| Field                   | Value                                                                                                                                                                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| slack_token        | 추후 입력                                                                                                                                                                                                                 |
+| wiki_api_key        | ATATT3xFfGF0EZw3Xois1uqZzpXAX5a9O5K7cRpb8                                                                                                                                                                                                                         |
+| wiki_url             | https://aws-chatops-workshop.atlassian.net/wiki                                                                                                                                                                                         |
+| wiki_user | juven8107@gmail.com |
+| bedrock_agent  | 추후 입력                                                                                                                                                                                                                               |
+| bedrock_agent_alias      | 추후 입력                                                                                                                                                                                                                 |
+
+
+
 1. Knowledge Base 메뉴에서 이전 단계에서 생성이 완료된 **knowledge-base-quick-start-2025** 로 진입합니다.
 2. Data source > Add > Third party data sources 에서 **Confluence** 를 선택하고 Next
 3. Name에는 ```knowledge-base-quick-start-ds-Confluence``` 라고 입력합니다.
