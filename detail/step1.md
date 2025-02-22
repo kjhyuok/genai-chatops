@@ -91,9 +91,18 @@ Secret description: **```Confluence-Wiki```**<br>
 ARN 정보 입력하기
 7. Content chunking and parsing(Parsing strategy)
 Amazon Bedrock default parser
-8. df
-9. dfd
-10. 
+
+<img width="990" alt="image" src="https://github.com/user-attachments/assets/89173112-2e09-46ef-ade4-4fcb7f0cf9a6" />
+
+9. 순차적인 sync
+<img width="816" alt="image" src="https://github.com/user-attachments/assets/e28733e6-374e-4ef7-88d3-ef1f9f69428f" />
+<img width="816" alt="image" src="https://github.com/user-attachments/assets/0cafddcd-9cc1-476d-a3ce-3a67875abaa9" />
+
+
+> 2개의 Data Source 최초 sync까지는 약 10분\~20분이 소요됩니다. **Break Time**
+
+11. dfd
+12. 
 
 
 
