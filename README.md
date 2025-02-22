@@ -6,8 +6,9 @@
 2. 지식의 자산화 필요성
 또한 장애가 해결된 이후에도 동일한 문제 발생 시 과거의 경험을 바탕으로 보다 빠르고 효율적으로 해결할 수 있다면 IT운영팀의 축적된 장애 대응 경험과 해결 노하우가 매우 중요한 자산입니다. 그래서 우리는 이러한 정보를 잘 요약된 내용으로 정리하여 추후 장애 시 활용한다면 장애의 빈도가 높은 모듈에 대한 개선 그리고 업무의 효율성을 높일 수 있습니다.
 
-본 페이지는 AWS GenAI를 활용한 IT 서비스 운영 자동화를 직접 구현해 보기 위해 Workshop형태로 제작 되었습니다. 전체적인 내용은 2025년 2월 11일 게시된
-<a href="https://github.com/kjhyuok/KR-AWS-DataSync-NFS-Server-Migration/raw/main/images/%E1%84%89%E1%85%B5%E1%86%AF%E1%84%89%E1%85%B3%E1%86%B8-AWS-Builders-Korea-Program-Storage-20230322.pdf" target="_blank">* AWS Tech Blog</a> 를 통해 확인해 보실 수 있습니다.
+본 페이지는 AWS GenAI를 활용한 IT 서비스 운영 자동화를 직접 구현해 보기 위해 Workshop형태로 제작 되었습니다.<br>
+전체적인 내용은 2025년 2월 11일 게시된
+<a href="https://aws.amazon.com/ko/blogs/tech/generative-ai-incident-response-knowledge-base/" target="_blank">*AWS Tech Blog:</a> 를 통해 확인해 보실 수 있습니다.
 
 ---
 
