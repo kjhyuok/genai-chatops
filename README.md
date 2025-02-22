@@ -52,7 +52,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
 <img width="900" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
 <br><br>
-이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 4단계로 구현해 보겠습니다.<br><br><br>
+이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 Step별로 구현해 보겠습니다.<br><br><br>
 
 * [Account Setting](SETUP.md) - AWS Account Setup(Workshop용 Account일 경우 참조)
 * [Preparations](cloudformation/README.md) - Workshop에 필요한 Resources(AWS Lambda Code, Amazon API GW 등)를 미리 배포
@@ -61,7 +61,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 * [Step3](detail/step3.md) - Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
   (실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br>
 * [Step4](detail/step4.md) - AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
-* [Step5](detail/step5.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
+* [CleanUp](detail/step5.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
 
 ---
 
