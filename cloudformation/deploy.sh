@@ -36,3 +36,4 @@ aws cloudformation deploy \
     --parameter-overrides \
         S3BucketLambdaCode=$BUCKET_NAME \
     --capabilities CAPABILITY_IAM
+    --region $AWS_REGION
