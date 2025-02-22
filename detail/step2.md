@@ -11,8 +11,6 @@ Amazon Bedrock Agent를 생성하고, 이전 단계에서 구성한 Knowledge Ba
    - 특정 질문을 입력하여 Knowledge Base 데이터를 기반으로 한 응답 확인.
 
 ---
-
----
 ## 1. Amazon Bedrock 메뉴에서 Agent 생성하기.<br>
 메뉴이동: [Amazon Bedrock Agents](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/agents)<br>
 
@@ -40,10 +38,11 @@ Amazon Bedrock Agent를 생성하고, 이전 단계에서 구성한 Knowledge Ba
 - Agent가 답변에 참조 할 수 있도록 Step1에서 생성했던 Knowledge Bases(agent-quick-start-2025)를 선택하고,<br> 
 ![image](https://github.com/user-attachments/assets/010d500f-28a5-4648-8873-25c67a935a58)
 
-- Instructions을 작성하고 Add 해줍니다.<br>
-Instructions을 작성하게 되면 Knowledge Bases가 사용자와 상호 작용하는 방식에 영향을 미치게 됩니다.<br>
+- 아래와 같이 Knowledge Base instruction for agent를 작성해주고 Add 해줍니다.<br>
+이렇게 Instruction을 작성하게 되면 Knowledge Bases가 Agent와 상호 작용하는 방식에 영향을 미치게 됩니다.<br>
 ```Refer to S3 & Confluence docs in Bedrock for AWS cloud questions from IT ops team via Slack. Use Claude Sonnet 3.5 v1 on Amazon Bedrock to accurately summarize and answer questions.```
-![image](https://github.com/user-attachments/assets/f78230c1-de24-4fdb-9c6c-2b9a10d1f33f)
+![image](https://github.com/user-attachments/assets/413f3c6e-e726-4aaa-815a-e352f81c0701)
+
 
 
 
