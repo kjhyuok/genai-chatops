@@ -52,21 +52,32 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 > 최종 생성까지는 약 3\~4분이 소요됩니다.
 
 🚩**Atlassian Confluence를 Data source 선택하기**<br>
-앞서 Knowledge Bases를 최초 생성하는 과정에서 Amazon S3를 Data source 로 추가한 반 있습니다.<br> 
+앞서 Knowledge Bases를 최초 생성하는 과정에서 Amazon S3를 Data source 로 추가한 바 있습니다.<br> 
 이번에는 팀내 협업 도구로 많이들 활용하시는 Atlassian Confluence를 Data source 로 추가해 보겠습니다.
 
-Secret Manager Screts 생성하기
-wiki_api_key/wiki_url/wiki_user 가 디폴트로 제공하기 
+이 설정에서는 Amazon Knowledge Bases 와 Atlassian Confluence 간의 Authentication이 필요합니다. 
+이 과정에서 Authentication method 로 Basic Authentication 을 선택하게 되는데 안전한 인증을 위해 AWS Secrets Manager Secret 의 ARN을 통해서 진행합니다.
+따라서 이 인증을 위해서 AWS Secrets Manager Secret 를 미리 생성해 보겠습니다. 
+원활한 Workshop을 위해 강사가 제공하는 아래의 정보(Atlassian Confluence 인증키)를 참고해서 Secret 생성해 주세요.
 
+**Secret Manager Screts 생성하기**
+메뉴이동: [AWS Secrets Manager](https://us-west-2.console.aws.amazon.com/secretsmanager/landing?region=us-west-2)<br>
 
-| Field                   | Value                                                                                                                                                                                                                               |
+Choose secret type: **Other type of secret** 선택
+Key/value pairs
+| Key                   | Value                                                                                                                                                                                                                               |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| slack_token        | 추후 입력                                                                                                                                                                                                                 |
-| wiki_api_key        | ATATT3xFfGF0EZw3Xois1uqZzpXAX5a9O5K7cRpb8                                                                                                                                                                                                                         |
-| wiki_url             | https://aws-chatops-workshop.atlassian.net/wiki                                                                                                                                                                                         |
-| wiki_user | juven8107@gmail.com |
-| bedrock_agent  | 추후 입력                                                                                                                                                                                                                               |
-| bedrock_agent_alias      | 추후 입력                                                                                                                                                                                                                 |
+| username        | ```강사가 제공```                                                                                                                                                                                                               |
+| password        | ```강사가 제공```                                                                                                                                                                                                                        |
+
+[Secret name and description 은 아래와 같이 입력하고 Next로 생성완료]<br>
+Secret name: **```AmazonBedrock-DataStore-Secret```**<br>
+Secret description: **```Confluence-Wiki```**<br>
+<img width="1109" alt="image" src="https://github.com/user-attachments/assets/699f016b-6dad-478c-8356-3dde73bc9282" />
+
+
+
+
 
 
 
