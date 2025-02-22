@@ -26,7 +26,7 @@ Amazon Bedrock Agent를 생성하고, 이전 단계에서 구성한 Knowledge Ba
 ```You are an agent helping IT service operations teams in large companies that operate the AWS cloud with technical issues. You will receive the following questions from IT operations teams on slack. The questions are very technical, and they are error messages or critical alarms generated not only from AWS, but also from various types of solutions such as 3rd party security and databases. 1.When the operations team asks you to analyze any message, you first check Confluence and S3 connected to Amazon Bedrock's KnowledgeBase. 2.Based on that information, you should use Amazon Bedrock's Claude3 LLM, summarize, and give an accurate answer in the form below. 2-1. For incoming messages, please provide analyzed content such as issue details, causes, solutions, etc. 2-2. @aws From the user's question called ask alias, check Confluence and S3 connected to Amazon Bedrock's KnowledgeBase to find answers based on past content as much as possible. In summary, you're an agent for seamless communication between Slack and Amazon Bedrock. If you describe the information you've found, leave that URL (Confluence or S3 bucket) Of course, all questions must be answered in Korean.```
 
 - 바로 아래에 Additional settings에서는 Enabled 선택합니다.<br>
-(Agent가 유저와 Interaction중에 충분한 정보가 없는 경우 Agent가 사용자에게 추가 정보를 요청할 수 있도록 지원 합니다.)
+(Agent가 사용자와 Interaction중에 충분한 정보가 없는 경우 Agent가 사용자에게 추가 정보를 요청할 수 있도록 지원 합니다.)
 ![image](https://github.com/user-attachments/assets/5e2661bb-c5e3-45a1-bff2-6ddae6ebc9fc)
 
 - Agent resource role이 Create and use a new service role로 선택되었는지 확인하고 지금까지 내용을 **Save and Exit**을 통해서 저장해 줍니다.(Agent 메뉴 우측상단)<br>
