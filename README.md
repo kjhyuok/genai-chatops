@@ -57,6 +57,14 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 👉 [Step4](detail/step4.md): AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
 👉 [Step5](detail/step5.md): CleanUp: 실습에 사용했던 모든 자원을 정리<br>
 
+* [Preparations](cloudformation/README.md) - 실습 사전 준비
+* [Step1](detail/step1.md) - IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성<br><br>
+* [Step2](detail/step2.md) - Amazon Bedrock Agent를 생성하고 Amazon Bedrock Knowledge Bases와 연동<br><br>
+* [Step3](detail/step3.md) - Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
+  (실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br><br>
+* [Step4](detail/step4.md) - AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
+* [Step5](detail/step5.md) - CleanUp: 실습에 사용했던 모든 자원을 정리
+
 ---
 
 ## 필수 조건 및 AWS 서비스 구성
