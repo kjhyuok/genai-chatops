@@ -59,11 +59,12 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 ```https://aws-chatops-workshop.atlassian.net```
 5. Authentication(Authentication method) > Basic Authentication
 ⭐️⭐️⭐️AWS Secrets Manager secret 이 부분 선행 필요!!⭐️⭐️⭐️
-6. Content chunking and parsing(Parsing strategy)
+ARN 정보 입력하기
+7. Content chunking and parsing(Parsing strategy)
 Amazon Bedrock default parser
-7. df
-8. dfd
-9. 
+8. df
+9. dfd
+10. 
 
 
 
