@@ -144,10 +144,11 @@ Basic Information 페이지의 Interactivity & Shortcuts 메뉴를 On으로 변�
 - **Reporting** 버튼 선택시 Slack의 현재 Thread에 나누던 모든 내용을 요약하여 Atlassian Confluence에 게시합니다.
 ![image](https://github.com/user-attachments/assets/1456751a-5819-4868-956c-5c2d7e7ec7ed)
 
-
 지금까지 고생많으셨습니다.<br> 
-Workshop의 모든 실습이 완료 되었습니다.<br>
-[Step5](detail/step5.md) 에서는 몇 가지 시나리오로 테스트를 자유롭게 수행해 봅시다.<br>
+
+## Workshop의 모든 실습이 완료 되었습니다.<br>
+
+[Step 5: 시나리오 기반 테스트](step5.md) 를 통해서 자유롭게 경험해 봅니다.
 
 ## 감사합니다.
 
