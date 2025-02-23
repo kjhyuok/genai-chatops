@@ -124,17 +124,17 @@ Triggers 메뉴를 보면, Amazon API Gateway와 통합되어 있는 2개를 확
 ![image](https://github.com/user-attachments/assets/071a2552-7ba2-461f-91d7-5b5538e7619e)
 
 Slack에 가입했던 Web브라우저(이유:Login 세션유지)에서 [Slack API 페이지](https://api.slack.com/apps)에 접속합니다.<br> 
-Basic Information 페이지의 SlInteractivity & Shortcuts 메뉴를 On으로 변경하면, Interactivity를 위한 Request URL을 입력하게 되어 있습니다.<br>
+Basic Information 페이지의 Interactivity & Shortcuts 메뉴를 On으로 변경하면, Interactivity를 위한 Request URL을 입력하게 되어 있습니다.<br>
 이곳에 바로 위에 AWS Lambda의 트리거로 설정된 Amazon API Gateway URL을 입력하고 꼭 **SAVE** 해줍니다.<br>
 ![image](https://github.com/user-attachments/assets/0b5d73a4-2113-487a-9ef3-98faeada4cf8)
 
 👏👏👏 모든 작업이 완료 되었습니다. 
-이제 Slack에서 3가지 버튼을 동작해 보겠습니다. 
-- Watch 버튼 선택
+정리해보면, Slack에서 MSG를 수신하고 최초 제공되는 버튼을 선택 시 Amazon API Gateway와 통합된 AWS Lambda Function(chatops-stack-gw-to-slack-function)을 호출하게 됩니다.<br>
+이후 Function은 정의된 버튼에 대한 각각의 Action을 수행하게 되는데 이제 Slack에서 다른 2가지 버튼을 동작해 보겠습니다.<br>
 
-- To bedrock agent 버튼 선택
+- To bedrock agent 버튼 선택시 Agent를 호출하여 Bedrock의 LLM에게 분석을 요청합니다.
 
-- Reporting 버튼 선택
+- Reporting 버튼 선택시 Atlassian Confluence 에 Thread 내용을 요약하여 게시합니다.
 
 
 
