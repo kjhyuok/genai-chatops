@@ -29,6 +29,48 @@ AWS Lambda와 API Gateway를 활용해 Slack 명령어로 Confluence에 데이�
    - Thread내 누적된 내용이 요약되어 Confluence에 리포팅 되는지 확인.
   
 ---
+## 1. AWS Lambda가 발생시키는 Test Error MSG를 Slack이 수신 할 수 있도록 Slack Custom APP을 생성.<br>
+최초 AWS Lambda로 부터 Slack Channel 로 수신되는 원본 Error Message 에 대해 3가지 Action[Watching | To Bedrock Agent | Reporting] 을 담당자가 할 수 있게 도와주는 역할을 제공하는 Slack App 을 하나 생성합니다. 이 App은 Slack에서 각 버튼을 선택하면 사용자의 요청을 수행해 주며, 즉시 결과를 Thread 에 알립니다.
+
+Step3에서 Slack에 가입했던 Web브라우저(이유:Login 세션유지)에서 [Slack API 페이지](https://api.slack.com/apps)에 접속합니다. 
+여기서 **Create an App** > From a manifest 로 APP을 생성해줍니다. 
+<img width="1294" alt="image" src="https://github.com/user-attachments/assets/358a8bbf-f170-44c7-9782-a6dc3e7b25ae" />
+
+Pick a workspace to develop your app in:는 여러분의 워크스페이스를 선택! 후 Next로 완료합니다.
+<img width="1277" alt="image" src="https://github.com/user-attachments/assets/ba82ee12-1fa2-4b6d-a305-3ed82c79be86" />
+
+<img width="1283" alt="image" src="https://github.com/user-attachments/assets/abfc141d-d208-4009-bfb7-2f4d718cd0ca" />
+
+<img width="855" alt="image" src="https://github.com/user-attachments/assets/303b6006-6d74-4196-b1ba-47b7fe9ea237" />
+
+<img width="1282" alt="image" src="https://github.com/user-attachments/assets/e6b962a3-bfd0-4cdf-934c-76eaaef21a2a" />
+
+<img width="1283" alt="image" src="https://github.com/user-attachments/assets/4a34bd40-8e8e-4047-b5d7-e58ab4d55ca1" />
+
+
+
+
+
+이 화면에서 OAuth & Permissions > 
+<img width="1278" alt="image" src="https://github.com/user-attachments/assets/1e7de8ff-c811-4678-a11b-ef131fcaa4d7" />
+
+<img width="718" alt="image" src="https://github.com/user-attachments/assets/525fa48d-bfa3-4376-9ae1-ffab30edaaf8" />
+Scopes > Bot Token Scopes 추가하기 
+Slack 의 OAuth Token을 발급하고 Permission scopes 을 잘 설정해 줘야 Slack App과 User간의 원활한 대화가 가능 합니다. 이 블로그에서 소개하는 구성에선 아래의 옵션들을 추가했으니 참고 하세요.<br>
+assistant:write, channels:history , channels:read, channels:write.topic, chat:write, chat:write.public, groups:history, groups:write, im:history, incoming-webhook, mpim:history
+
+<img width="701" alt="image" src="https://github.com/user-attachments/assets/248e0327-365b-4ac3-a55f-c03d2d90fb04" />
+
+OAuth Tokens > Bot User OAuth Token 생성하기
+<img width="1275" alt="image" src="https://github.com/user-attachments/assets/0c8dcaad-2672-4471-a961-f9ab16737d77" />
+
+이 App을 aws-chatops-workshop 채널에 배포하기
+<img width="1249" alt="image" src="https://github.com/user-attachments/assets/de8f15ce-9e2a-4b0f-893b-a54ef5f1d1d1" />
+
+OAuth Tokens > Bot User OAuth Token 값을 따로 저장(Secret Manager 에 보관예정)
+<img width="1274" alt="image" src="https://github.com/user-attachments/assets/01769d24-304f-40db-be54-0674601af23a" />
+
+
 
 
 
