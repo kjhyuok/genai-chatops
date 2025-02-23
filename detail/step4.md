@@ -102,16 +102,16 @@ Add environment variable 에 아래와 같이 Value를 입력 후 저장합니�
 
 **chatops-stack-msg-to-slack-function** 을 Test 해보겠습니다.<br>
 👏👏👏우측에 Slack채널(aws-chatops-workshop)에 **chatops-stack-msg-to-slack-function** 로 부터 Erro MSG를 정상적으로 수집했습니다.<br>
-![image](https://github.com/user-attachments/assets/3e5c733a-015b-4635-b6ab-c8a11cfb73ed)
-
+![image](https://github.com/user-attachments/assets/c1a198cc-983a-4959-b83d-0b662cba9e47)
 
 
 이번에는 Agent 를 통해 Bedrock LLM 호출 및 Confluence에 Thread 내용을 요약 후 리포팅하는 역할을 수행하는 **chatops-stack-gw-to-slack-function** 을 수정해 보겠습니다.<br>
 **2nd - AWS Lambda Function:** [chatops-stack-gw-to-slack-function 바로가기](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/chatops-stack-gw-to-slack-function?tab=code)<br>
 
-🚩140번 Line의 send_slack_message에 "<@aws> ask bora"를 ```<@Amazon Q> ask 커넥터이름``` 로 변경 후 **Deploy** 합니다.<br>
+🚩140번 Line의 send_slack_message에 "<@aws> ask bora"를 ```<@q> ask 커넥터이름``` 로 변경 후 **Deploy** 합니다.<br>
 (2025년 2월 AWS Chatbot이 Amazon Q Developer로 이름이 변경되며, 커넥터 호출방식도 변경됨)
-![image](https://github.com/user-attachments/assets/d356022d-867e-4575-ae10-19086ae0e061)
+![image](https://github.com/user-attachments/assets/e985fa6e-9775-424f-bf22-1e3d74603487)
+
 
 Configuration > Environment variables > Edit <br>
 ![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
