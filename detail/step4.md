@@ -135,8 +135,12 @@ Basic Information 페이지의 Interactivity & Shortcuts 메뉴를 On으로 변�
 - **To bedrock agent** 버튼 선택시 Agent를 호출하여 Bedrock의 LLM에게 분석을 요청합니다.<br>
   1. 먼저 팀 자산이 임베딩 된 Amazon Bedrock Knowledge Bases를 검색하고 수신했던 MSG와 유사한 결과를 찾습니다.
   2. 이후 이 결과를 바탕으로 LLM은 원인, 분석, 해결, 요약 등 Step2 Agent를 생성할 때 Prompt로 설정한 의도에 최대한 맞춰서 답을 줍니다.
+![image](https://github.com/user-attachments/assets/9448b528-4efc-473a-a0eb-b4f95a61bcaa)
 
-- **Reporting** 버튼 선택시 Atlassian Confluence 에 Slack의 현재 Thread 내용을 요약하여 게시합니다.
+- Connector를 추가 호출하면서 좀 더 구체적인 질문도 해봅니다.
+![image](https://github.com/user-attachments/assets/73c86b0d-fa0b-4c66-8f92-4043b32602aa)
+
+- **Reporting** 버튼 선택시 Slack의 현재 Thread에 나누던 모든 내용을 요약하여 Atlassian Confluence에 게시합니다.
 
 
 
