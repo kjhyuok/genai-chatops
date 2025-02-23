@@ -128,6 +128,14 @@ Basic Information 페이지의 SlInteractivity & Shortcuts 메뉴를 On으로 �
 이곳에 바로 위에 AWS Lambda의 트리거로 설정된 Amazon API Gateway URL을 입력하고 꼭 **SAVE** 해줍니다.<br>
 ![image](https://github.com/user-attachments/assets/0b5d73a4-2113-487a-9ef3-98faeada4cf8)
 
+👏👏👏 모든 작업이 완료 되었습니다. 
+이제 Slack에서 3가지 버튼을 동작해 보겠습니다. 
+- Watch 버튼 선택
+
+- To bedrock agent 버튼 선택
+
+- Reporting 버튼 선택
+
 
 
 
