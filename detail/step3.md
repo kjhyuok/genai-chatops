@@ -3,7 +3,8 @@
 ### 목표
 Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 및 알림 메시지를 수신합니다.
 
-<img width="914" alt="image" src="https://github.com/user-attachments/assets/5f26643c-2c5c-4799-a2c5-add7cfa2aa66" />
+<img width="914" alt="image" src="https://github.com/user-attachments/assets/66dd8fe6-4fae-4f8b-9679-777f54a3b426" />
+
 
 
 ### 실습 내용
