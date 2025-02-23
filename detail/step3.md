@@ -3,6 +3,9 @@
 ### 목표
 Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 및 알림 메시지를 수신합니다.
 
+<img width="914" alt="image" src="https://github.com/user-attachments/assets/5f26643c-2c5c-4799-a2c5-add7cfa2aa66" />
+
+
 ### 실습 내용
 1. Slack에서 새로운 앱 생성 및 Webhook URL 설정.
 2. AWS Lambda 함수 생성:
