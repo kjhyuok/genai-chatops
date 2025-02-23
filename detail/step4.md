@@ -57,7 +57,7 @@ Pick a workspace to develop your app in:는 여러분의 워크스페이스를 �
 <img width="718" alt="image" src="https://github.com/user-attachments/assets/525fa48d-bfa3-4376-9ae1-ffab30edaaf8" />
 Scopes > Bot Token Scopes 추가하기 
 Slack 의 OAuth Token을 발급하고 Permission scopes 을 잘 설정해 줘야 Slack App과 User간의 원활한 대화가 가능 합니다. 이 블로그에서 소개하는 구성에선 아래의 옵션들을 추가했으니 참고 하세요.<br>
-assistant:write, channels:history , channels:read, channels:write.topic, chat:write, chat:write.public, groups:history, groups:write, im:history, incoming-webhook, mpim:history
+assistant:write, channels:history , channels:read, channels:write.topic, chat:write, chat:write.public, groups:history, groups:write, im:history, incoming-webhook, mpim:history<br>
 
 <img width="701" alt="image" src="https://github.com/user-attachments/assets/248e0327-365b-4ac3-a55f-c03d2d90fb04" />
 
