@@ -11,7 +11,7 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 2. Amazon Q Developer in chat applications(구: AWS Chatbot)을 Slack에 배포.
 3. Amazon Bedrock Agent와 Amazon Q Developer 와 연동.
    - 이 작업을 통해 Slack에서 Agent가 Amazon Bedrock에게 질의를 할 수 있게 됩니다.
-4. Slack 채널에서 Amazon Bedrock 호출 테스트
+4. Slack의 Channel에서 Amazon Bedrock LLM을 호출하기 위한 Connector 설정.
 
 
 
@@ -98,9 +98,42 @@ Amazon Q Developer in chat applications 메뉴에서 Slack WorkSpace: **aws-chat
 <img width="1513" alt="image" src="https://github.com/user-attachments/assets/bb50d665-8e4a-4469-9843-34c8586ba063" />
 <img width="1513" alt="image" src="https://github.com/user-attachments/assets/77de2012-f426-40e1-a5db-a470154399e5" />
 
-배포하고 Guardrail policies 2개(ReadOnlyAccess, AmazonBedrockFullAccess)를 추가한 내용을 공유 드리며 자세한 설정방법은 Amazon Bedrock 에이전트 연결 설명서 페이지를 참조하세요.
+## 4. Slack의 Channel에서 Amazon Bedrock LLM을 호출하기 위한 Connector 설정.
+Slack의 Channel에서 Amazon Bedrock Agents 가 Amazon Bedrock 의 FM(Foundation Model)을 호출하기 위해서는 최초 1회 Connector 설정이 필요 하며 그 방법은 아래와 같습니다.
+1. [Amazon Bedrock Agents](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/agents) > Step2에서 생성한 **agent-quick-start-2025** 진입
+2. Agent의 ARN을 확인해서 복사해 둡니다.
+<img width="1027" alt="image" src="https://github.com/user-attachments/assets/da072ea6-0138-4f0d-ba68-c12207f9b2bb" />
+3. 동일메뉴 하단에 Agent의 Alias 정보도 복사해 둡니다.
+<img width="742" alt="image" src="https://github.com/user-attachments/assets/d1197590-5e35-49e6-9e6d-beccf2306713" />
+
+그리고 connector 설정 명령어로 아래와 같이 작성해 줍니다. 
+> 저는 다음과 같습니다. 
+
+```@Amazon Q connector add JKF arn:aws:bedrock:us-west-2:AccountID12자리:agent/GHFQZF4DHJ 5OEZZ8BA7K``` <br>
+
+이 명령어를 Slack 채널창에 붙여서 실행하면 Amazon Q Developer APP이 채널에서 Amazon Bedrock Agent를 직접 호출할 수 있게 됩니다.<br>
+저는 Connector 이름을 JKF 라고 지정했습니다.(호출 편의를 위해 가급적 간단한 Alias로 만들어주세요.)<br>
+<img width="922" alt="image" src="https://github.com/user-attachments/assets/f96cb70e-d600-468c-88f4-0684d590841e" />
+
+Slack에서 Amazon Q를 통해서 Bedrock Agent를 호출하는 방법입니다.<br>
+```@Amazon Q ask 커넥터이름 "하고싶은 질문"```<br>
+같은 방식으로 몇개의 질문을 던져봤더니 Step1에서 연동했던 Amazon Bedrock Knowledgebases 로 부터 동기화된 Atlassian Confluence 등록 게시글 정보를 잘 가져왔습니다.<br>
+<img width="906" alt="image" src="https://github.com/user-attachments/assets/605b036b-3f99-47d6-8ee9-e0ccedbc576e" />
+<img width="906" alt="image" src="https://github.com/user-attachments/assets/d79b78dc-3cdd-45f5-bb51-8cd6e7f9f9a1" />
+
+>Connector 삭제하기: @Amazon Q connector delete 커넥터이름.<br>
+>Slack 채널내 등록된 Connector 리스트보기: @Amazon Q connector list<br>
+>자세한 Connector 관련 설정 및 명령은 [공식 Doc](https://docs.aws.amazon.com/ko_kr/chatbot/latest/adminguide/bedrock-update.html) 를 참고하세요.<br>
+
+***
+
+이제 Step3를 마쳤습니다. 이 작업을 통해서 Slack에서 Amazon Bedrock Agent를 통해서 Amazon Bedrock의 LLM에게 질의를 할 수 있게 되었습니다.
+
+### 이제, AWS Lambda를 통해서 실제 Error MSG를 Slack에 수신하고 Agent > Knowledge Base > LLM에 의해 분석된 Slack Thread 내용을 Confluence 리포팅 해보는 작업을 진행해 봅시다.<br>
+
+[Step 4: AWS Lambda와 Amazon API Gateway로 Slack과 Confluence 간 연동](step4.md)
 
 
-이 작업을 통해 Slack에서 Agent가 Amazon Bedrock에게 질의를 할 수 있게 됩니다.
+
 
 
