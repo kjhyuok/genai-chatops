@@ -4,36 +4,31 @@
 AWS Lambda와 API Gateway를 활용해 Slack 명령어로 Confluence에 데이터를 기록하는 기능 구현.<br>
 <img width="1007" alt="image" src="https://github.com/user-attachments/assets/53bb8b61-3285-4f10-adf5-f8c1e70a079c" />
 
-
-step4 는 가장 난이도높음!
-
-시작시
-
-1.slack 앱생성-설정-키값생성
-
-2.new kms 에 키값넣기
-
-3.lambda 2 개 수정, kms 환경변수추가
-
-4.api gw 에 wiki url 연결후 lambda 통합
-
-5.최종테스트!
-
-- 메시지분석
-- 요약
-- 게시
-
+***
 ### 실습 내용
-1. Amazon API Gateway에서 HTTP 엔드포인트 생성.
-2. AWS Lambda 함수 작성:
-   - Slack 명령어 처리 및 Confluence API 호출 로직 구현.
-3. API Gateway와 Lambda 연결.
-4. Slack 명령어 테스트:
-   - 특정 메시지를 입력하여 Confluence에 데이터 기록 여부 확인.
+1. AWS Lambda가 발생시키는 Test Error MSG를 Slack이 수신 할 수 있도록 Slack Custom APP을 생성.
+2. AWS Secret Manager를 생성하고, Slack Custom APP, Atlassian Confluence 의 Secure Key등을 Secret value로 저장.
+   - 이 Secret value 들은 AWS Lambda가 API를 통해서 Slack, Atlassian Confluence 간 통신하는데 환경변수로 사용됩니다.
+   - 다음과 같이 6가지의 Key/Value를 저장합니다.<br>
+
+| Secret key                   | Secret value                                                                                                                                                                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| slack_token        | ```여러분 Slack Custom APP의 Token Key```                                                                                                                                                                                                               |
+| wiki_api_key     | ```강사 제공```                                                                                                                                                                                                           |
+| wiki_url  | ```https://aws-chatops-workshop.atlassian.net/wiki```                                                                                                                                                                                                                        |
+| wiki_user  | ```강사 제공```                                                                                                                                                                                                        |
+| bedrock_agent        | ```여러분의 AgentID```                                                                                                                                                                                                          |
+| bedrock_agent_alias        | ```여러분의 Agent AliasID```                                                                                                                                                                                          |
+
+3. AWS Lambda 함수 2개 수정:
+   - chatops-stack-msg-to-slack-function: Error MSG를 Slack으로 전달하는 역할
+   - chatops-stack-gw-to-slack-function: Agent 를 통해 Bedrock LLM 호출 및 Confluence에 Thread 내용요약 후 리포팅하는 역할
+4. Amazon API Gateway와 AWS Lambda통합 연결.
+5. Slack에서 최종 테스트:
+   - Error MSG를 Bedrock 의 LLM을 통해 분석 확인.
+   - Thread내 누적된 내용이 요약되어 Confluence에 리포팅 되는지 확인.
   
-   - 
-3. AWS Lambda 함수 생성:(CloudFormation으로 이미 Workshop에 배포완료)
-   - 특정 이벤트 발생시 메시지를 Slack으로 알림 전송하는 역할 수행.
-   - Message to Lambda   - 이 Workshop에서는 AWS Lambda를 통해서 Hard Coding 된 준비된 특정 Error 이벤트를 발생합니다.
-5. Slack 채널에서 알림 메시지 수신 테스트 확인.
 ---
+
+
+
