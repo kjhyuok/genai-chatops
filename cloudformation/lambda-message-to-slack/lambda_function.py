@@ -5,7 +5,6 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from botocore.exceptions import ClientError
 
-
 def get_secret():
 	secret_name = os.getenv('SLACK_TOKEN_SECRET')
 	region_name = os.getenv('REGION')
@@ -29,7 +28,6 @@ def get_secret():
 	
 	return secret_dict["slack_token"]
 
-
 def lambda_handler(event, context):
 	client = WebClient(token=get_secret())
 	#message_text = "our current user or role does not have access to Kubernetes objects on this EKS cluster."
@@ -37,11 +35,11 @@ def lambda_handler(event, context):
 	#message_text = "An error occurred (ClientException) when calling the RegisterTaskDefinition operation: Invalid 'cpu' setting for task."
 	#message_text = "Database connection timeout exceeded. Unable to establish a connection within the configured timeout period."
 	#message_text = "The maximum number of VPCs has been reached. (Service: AmazonEC2; Status Code: 400; Error Code: VpcLimitExceeded; Request ID: a12b34cd-567e-890-123f-ghi4j56k7lmn)"
-	#message_text = "WAF has detected abnormal traffic patterns indicative of potential malicious activity. Immediate investigation is recommended."
-	message_text = "Critical Alert:AWS ALB Healthy Host Count 1대 미만, 발생 시간 : Wed, 11 Dec 2024 19:01:00 GMT, 14|1: Museum Collection Management POS, CH : CTPRD-MUCMP-PRV-ALB targetgroup/CTPRD-MUCMP-PRV-ALB-4433/7a593ea8d4f9d9b0"
+	message_text = "WAF has detected abnormal traffic patterns indicative of potential malicious activity. Immediate investigation is recommended."
+
 	try:
 		result = client.chat_postMessage(
-			channel="bora", 
+			channel="aws-chatops-workshop", 
 			text=message_text,
 			blocks=[
 				{
