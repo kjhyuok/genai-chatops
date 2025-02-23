@@ -66,7 +66,7 @@ Step3에서 Slack에 가입했던 Web브라우저(이유:Login 세션유지)에�
 <img width="910" alt="image" src="https://github.com/user-attachments/assets/a72a23e4-a69b-4ab1-8389-9b92b0b8ac1d" />
 
 ## 2. AWS Secret Manager를 생성하고, Slack Custom APP, Atlassian Confluence 의 Secure Key등을 Secret value로 저장.
-   - 이 Secret value 들은 AWS Lambda가 API를 통해서 Slack, Atlassian Confluence 간 통신하는데 환경변수로 사용됩니다.<br>
+- 이 Secret value 들은 AWS Lambda가 API를 통해서 Slack, Atlassian Confluence 간 통신하는데 환경변수로 사용됩니다.<br>
 
 [AWS Secrets Manager](https://us-west-2.console.aws.amazon.com/secretsmanager/listsecrets?region=us-west-2)에 접속합니다.<br>
 새로운 Secret을 생성하고, 아래와 같이 Key/value pairs를 넣어 줍니다.<br>
@@ -85,6 +85,42 @@ Step3에서 Slack에 가입했던 Web브라우저(이유:Login 세션유지)에�
 중요! Secret name은 정확히 ```wn/chatops/secret``` 로 입력 후 저장해 주세요.<br>
 (AWS Lambda에서 slack, confluence 인증을 위해 이 value name을 환경변수로 참고합니다.<br>
 <img width="1464" alt="image" src="https://github.com/user-attachments/assets/631b66b6-034b-4ee6-8b1a-1f0edb0c8f7f" />
+
+## 3. AWS Lambda 함수 2개 수정:
+이 Workshop에서 가장 중요한 역할을 수행하는 AWS Lambda Function 2개는 이미 실습시작 시 여러분이 수행한 Cloudforamtion을 통해서 배포되어 있습니다.
+먼저 강제로 Error MSG를 발생시키고 Slack으로 전달하는 역할을 수행하는 **chatops-stack-msg-to-slack-function** 을 수정해 보겠습니다.<br>
+**1st - AWS Lambda Function:** [chatops-stack-msg-to-slack-function 바로가기](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/chatops-stack-msg-to-slack-function?tab=code)<br>
+
+🚩44번 Line의 channel에 ```aws-chatops-workshop``` 로 변경 후 **Deploy** 합니다.<br>
+![image](https://github.com/user-attachments/assets/642a7a66-55ec-4e56-a3f3-25d6f3888e1d)
+
+Configuration > Environment variables > Edit <br>
+![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
+
+Add environment variable 에 아래와 같이 Value를 입력 후 저장합니다.<br>
+![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)
+
+**chatops-stack-msg-to-slack-function** 을 Test 해보겠습니다.<br>
+👏👏👏우측에 Slack채널(aws-chatops-workshop)에 **chatops-stack-msg-to-slack-function** 로 부터 Erro MSG를 정상적으로 수집했습니다.<br>
+![image](https://github.com/user-attachments/assets/3e5c733a-015b-4635-b6ab-c8a11cfb73ed)
+
+
+
+이번에는 Agent 를 통해 Bedrock LLM 호출 및 Confluence에 Thread 내용을 요약 후 리포팅하는 역할을 수행하는 **chatops-stack-gw-to-slack-function** 을 수정해 보겠습니다.<br>
+**2nd - AWS Lambda Function:** [chatops-stack-gw-to-slack-function 바로가기](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/chatops-stack-gw-to-slack-function?tab=code)<br>
+
+<!--🚩140번 Line의 send_slack_message에 "<@aws> ask bora"를 ```Amazon Bedrock Agent``` 로 변경 후 **Deploy** 합니다.<br>-->
+Configuration > Environment variables > Edit <br>
+![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
+
+Add environment variable 에 아래와 같이 Value를 입력 후 저장합니다.<br>
+![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)
+
+
+Slack에 가입했던 Web브라우저(이유:Login 세션유지)에서 [Slack API 페이지](https://api.slack.com/apps)에 접속합니다. 
+Basic Information 페이지의 SlInteractivity & Shortcuts 메뉴를 On으로 변경하면, Interactivity를 위한 Request URL을 입력하게 되어 있습니다.<br>
+이곳에 바로 위에 AWS Lambda의 트리거로 설정된 Amazon API Gateway URL을 입력하고 꼭 **SAVE** 해줍니다.<br>
+![image](https://github.com/user-attachments/assets/0b5d73a4-2113-487a-9ef3-98faeada4cf8)
 
 
 
