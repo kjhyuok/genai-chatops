@@ -3,7 +3,7 @@
 ### 목표
 Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 구성하고, Retrieval-Augmented Generation(RAG) 워크플로를 설정합니다.<br>
 
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/93c4366a-ead9-4524-bbd2-9e9141ec3b0e" /><br>
+<img width="816" alt="image" src="https://github.com/user-attachments/assets/b7ba91f1-cbb7-423d-897f-7408b88fa47c" /><br>
 
 
 >👉🏻이 Workshop의 모든 실습을 us-west-2(Oregon)에서 진행되니 AWS Console 우측 상단의 Region을 확인해 주세요.
