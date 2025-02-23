@@ -141,6 +141,12 @@ Basic Information 페이지의 Interactivity & Shortcuts 메뉴를 On으로 변�
 ![image](https://github.com/user-attachments/assets/73c86b0d-fa0b-4c66-8f92-4043b32602aa)
 
 - **Reporting** 버튼 선택시 Slack의 현재 Thread에 나누던 모든 내용을 요약하여 Atlassian Confluence에 게시합니다.
+![image](https://github.com/user-attachments/assets/1456751a-5819-4868-956c-5c2d7e7ec7ed)
+
+
+여기까지 해서 이 Workshop의 모든 실습이 완료 되었습니다.<br>
+## 감사합니다.
+
 
 
 
