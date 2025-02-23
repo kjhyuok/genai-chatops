@@ -66,17 +66,26 @@ Step3에서 Slack에 가입했던 Web브라우저(이유:Login 세션유지)에�
 <img width="910" alt="image" src="https://github.com/user-attachments/assets/a72a23e4-a69b-4ab1-8389-9b92b0b8ac1d" />
 
 ## 2. AWS Secret Manager를 생성하고, Slack Custom APP, Atlassian Confluence 의 Secure Key등을 Secret value로 저장.
-   - 이 Secret value 들은 AWS Lambda가 API를 통해서 Slack, Atlassian Confluence 간 통신하는데 환경변수로 사용됩니다.
-   - 다음과 같이 6가지의 Key/Value를 저장합니다.<br>
+   - 이 Secret value 들은 AWS Lambda가 API를 통해서 Slack, Atlassian Confluence 간 통신하는데 환경변수로 사용됩니다.<br>
+
+[AWS Secrets Manager](https://us-west-2.console.aws.amazon.com/secretsmanager/listsecrets?region=us-west-2)에 접속합니다.<br>
+새로운 Secret을 생성하고, 아래와 같이 Key/value pairs를 넣어 줍니다.<br>
+다음과 같이 6가지의 Key/Value를 저장합니다.<br>
+<img width="1450" alt="image" src="https://github.com/user-attachments/assets/3b9fc537-a0f1-4d1c-9e95-fa47e208d80e" /><br>
 
 | Secret key                   | Secret value                                                                                                                                                                                                                               |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| slack_token        | ```여러분 Slack Custom APP의 Token Key```                                                                                                                                                                                                               |
+| slack_token        | ```여러분 Slack Custom APP의 Bot User OAuth Token```                                                                                                                                                                                                               |
 | wiki_api_key     | ```강사 제공```                                                                                                                                                                                                           |
 | wiki_url  | ```https://aws-chatops-workshop.atlassian.net/wiki```                                                                                                                                                                                                                        |
 | wiki_user  | ```강사 제공```                                                                                                                                                                                                        |
 | bedrock_agent        | ```여러분의 AgentID```                                                                                                                                                                                                          |
 | bedrock_agent_alias        | ```여러분의 Agent AliasID```                                                                                                                                                                                          |
+
+중요! Secret name은 정확히 ```wn/chatops/secret``` 로 입력 후 저장해 주세요.<br>
+(AWS Lambda에서 slack, confluence 인증을 위해 이 value name을 환경변수로 참고합니다.<br>
+<img width="1464" alt="image" src="https://github.com/user-attachments/assets/631b66b6-034b-4ee6-8b1a-1f0edb0c8f7f" />
+
 
 
 
