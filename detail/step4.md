@@ -116,8 +116,11 @@ Configuration > Environment variables > Edit <br>
 Add environment variable 에 아래와 같이 Value를 입력 후 저장합니다.<br>
 ![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)
 
+Triggers 메뉴를 보면, Amazon API Gateway와 통합되어 있는 2개를 확인할 수 있습니다.<br>
+그중 아래의 2번째 URL을 복사해서 따로 저장해 둡니다.<br>
+![image](https://github.com/user-attachments/assets/071a2552-7ba2-461f-91d7-5b5538e7619e)
 
-Slack에 가입했던 Web브라우저(이유:Login 세션유지)에서 [Slack API 페이지](https://api.slack.com/apps)에 접속합니다. 
+Slack에 가입했던 Web브라우저(이유:Login 세션유지)에서 [Slack API 페이지](https://api.slack.com/apps)에 접속합니다.<br> 
 Basic Information 페이지의 SlInteractivity & Shortcuts 메뉴를 On으로 변경하면, Interactivity를 위한 Request URL을 입력하게 되어 있습니다.<br>
 이곳에 바로 위에 AWS Lambda의 트리거로 설정된 Amazon API Gateway URL을 입력하고 꼭 **SAVE** 해줍니다.<br>
 ![image](https://github.com/user-attachments/assets/0b5d73a4-2113-487a-9ef3-98faeada4cf8)
