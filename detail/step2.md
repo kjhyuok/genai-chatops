@@ -3,6 +3,9 @@
 ### 목표
 Amazon Bedrock Agent를 생성하고, 이전 단계에서 구성한 Knowledge Bases와 연동하여 에이전트가 데이터를 활용하도록 설정합니다.
 
+<img width="914" alt="image" src="https://github.com/user-attachments/assets/2c04bd88-b149-4332-87c5-2610dd8109ad" />
+
+
 ### 실습 내용
 1. Amazon Bedrock 메뉴에서 Agent 생성.
 2. 에이전트의 역할과 사용 모델(FM) 정의.
