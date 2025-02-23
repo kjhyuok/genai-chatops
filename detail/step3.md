@@ -7,13 +7,14 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 
 
 ### 실습 내용
-1. Slack을 생성하고 Amazon Q Developer in chat applications(구: AWS Chatbot)를 배포.
-2. AWS Lambda 함수 생성:(CloudFormation으로 이미 Workshop에 배포완료)
-   - 특정 이벤트 발생시 메시지를 Slack으로 알림 전송하는 역할 수행.
-   - Message to Lambda
-3. CloudWatch와 Lambda 연동:
-   - 이 Workshop에서는 AWS Lambda를 통해서 Hard Coding 된 준비된 특정 Error 이벤트를 발생합니다.
-4. Slack 채널에서 알림 메시지 수신 테스트 확인.
+1. Slack 계정을 신규로 생성하고, 워크스페이스와 채널을 만들기.
+2. Amazon Q Developer in chat applications(구: AWS Chatbot)을 Slack에 배포.
+3. Amazon Bedrock Agent와 Amazon Q Developer 와 연동.
+   - 이 작업을 통해 Slack에서 Agent가 Amazon Bedrock에게 질의를 할 수 있게 됩니다.
+4. Slack 채널에서 Amazon Bedrock 호출 테스트
+
+
+
 
 ---
 ## 1. Slack의 워크스페이스를 생성하고 Amazon Q Developer in chat applications(구: AWS Chatbot)를 배포.<br>
