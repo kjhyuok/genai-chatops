@@ -1,7 +1,9 @@
 ## Step 4: AWS Lambda와 Amazon API Gateway로 Slack과 Confluence 연동
 
 ### 목표
-AWS Lambda와 API Gateway를 활용해 Slack 명령어로 Confluence에 데이터를 기록하는 기능 구현.
+AWS Lambda와 API Gateway를 활용해 Slack 명령어로 Confluence에 데이터를 기록하는 기능 구현.<br>
+<img width="1007" alt="image" src="https://github.com/user-attachments/assets/53bb8b61-3285-4f10-adf5-f8c1e70a079c" />
+
 
 step4 는 가장 난이도높음!
 
