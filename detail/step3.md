@@ -17,7 +17,8 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 
 
 ---
-## 1. Slack의 워크스페이스를 생성하고 Amazon Q Developer in chat applications(구: AWS Chatbot)를 배포.<br>
+## 1. Slack의 워크스페이스를 생성하고 Amazon Q Developer in chat applications<br>
+(구: AWS Chatbot)를 배포.<br>
 본 Workshop에서 활용할 Slack을 무료버전으로 간단히 만들어 봅니다. (🚩업무에 불편을 주지 않을 Pure한 실습용 E-Mail로 만들어 주세요.)<br>
 [Slack 가입하기](https://slack.com/intl/ko-kr/get-started?utm_source=google&utm_medium=paid_search&utm_campaign=kr__20241202&gclid=EAIaIQobChMI94iphN_YiwMVIeoWBR2xUx5bEAAYASAAEgLbJvD_BwE&campaign=701ed00000BwjL3AAJ&lpt=1#/createnew)
 
