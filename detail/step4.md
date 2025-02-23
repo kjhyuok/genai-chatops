@@ -144,7 +144,9 @@ Basic Information 페이지의 Interactivity & Shortcuts 메뉴를 On으로 변�
 ![image](https://github.com/user-attachments/assets/1456751a-5819-4868-956c-5c2d7e7ec7ed)
 
 
-여기까지 해서 이 Workshop의 모든 실습이 완료 되었습니다.<br>
+지금까지 고생많으셨습니다.<br> 
+Workshop의 모든 실습이 완료 되었습니다.<br>
+
 ## 감사합니다.
 
 
