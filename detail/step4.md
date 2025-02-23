@@ -109,7 +109,10 @@ Add environment variable 에 아래와 같이 Value를 입력 후 저장합니�
 이번에는 Agent 를 통해 Bedrock LLM 호출 및 Confluence에 Thread 내용을 요약 후 리포팅하는 역할을 수행하는 **chatops-stack-gw-to-slack-function** 을 수정해 보겠습니다.<br>
 **2nd - AWS Lambda Function:** [chatops-stack-gw-to-slack-function 바로가기](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/chatops-stack-gw-to-slack-function?tab=code)<br>
 
-<!--🚩140번 Line의 send_slack_message에 "<@aws> ask bora"를 ```Amazon Bedrock Agent``` 로 변경 후 **Deploy** 합니다.<br>-->
+🚩140번 Line의 send_slack_message에 "<@aws> ask bora"를 ```<@Amazon Q> ask 커넥터이름``` 로 변경 후 **Deploy** 합니다.<br>
+(2025년 2월 AWS Chatbot이 Amazon Q Developer로 이름이 변경되며, 커넥터 호출방식도 변경됨)
+![image](https://github.com/user-attachments/assets/d356022d-867e-4575-ae10-19086ae0e061)
+
 Configuration > Environment variables > Edit <br>
 ![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
 
