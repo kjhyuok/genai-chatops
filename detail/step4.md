@@ -91,8 +91,9 @@ Step3에서 Slack에 가입했던 Web브라우저(이유:Login 세션유지)에�
 먼저 강제로 Error MSG를 발생시키고 Slack으로 전달하는 역할을 수행하는 **chatops-stack-msg-to-slack-function** 을 수정해 보겠습니다.<br>
 **1st - AWS Lambda Function:** [chatops-stack-msg-to-slack-function 바로가기](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/chatops-stack-msg-to-slack-function?tab=code)<br>
 
-🚩44번 Line의 channel에 ```aws-chatops-workshop``` 로 변경 후 **Deploy** 합니다.<br>
-![image](https://github.com/user-attachments/assets/642a7a66-55ec-4e56-a3f3-25d6f3888e1d)
+🚩코드의 channel="aws-chatops-workshop" 에 여러분이 만든 Slack 워크스페이스내의 채널명과 동일한지 확인합니다.<br>
+![image](https://github.com/user-attachments/assets/e637fea3-5842-43e9-b961-9008f323ff76)
+
 
 Configuration > Environment variables > Edit <br>
 ![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
@@ -108,8 +109,8 @@ Add environment variable 에 아래와 같이 Value를 입력 후 저장합니�
 이번에는 Agent 를 통해 Bedrock LLM 호출 및 Confluence에 Thread 내용을 요약 후 리포팅하는 역할을 수행하는 **chatops-stack-gw-to-slack-function** 을 수정해 보겠습니다.<br>
 **2nd - AWS Lambda Function:** [chatops-stack-gw-to-slack-function 바로가기](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/chatops-stack-gw-to-slack-function?tab=code)<br>
 
-🚩140번 Line의 send_slack_message에 "<@aws> ask bora"를 ```<@q> ask 커넥터이름``` 로 변경 후 **Deploy** 합니다.<br>
-(2025년 2월 AWS Chatbot이 Amazon Q Developer로 이름이 변경되며, 커넥터 호출방식도 변경됨)
+🚩send_slack_message에 "<@q> ask 커넥터이름" 에서 커넥터이름을 적절하게 변경 후 **Deploy** 합니다.<br>
+(2025년 2월 AWS Chatbot이 Amazon Q Developer로 이름이 변경되며, 커넥터 호출방식도 @aws > @q 로 변경됨)
 ![image](https://github.com/user-attachments/assets/e985fa6e-9775-424f-bf22-1e3d74603487)
 
 
@@ -146,6 +147,7 @@ Basic Information 페이지의 Interactivity & Shortcuts 메뉴를 On으로 변�
 
 지금까지 고생많으셨습니다.<br> 
 Workshop의 모든 실습이 완료 되었습니다.<br>
+[Step5](detail/step5.md) 에서는 몇 가지 시나리오로 테스트를 자유롭게 수행해 봅시다.<br>
 
 ## 감사합니다.
 
