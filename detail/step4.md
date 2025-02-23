@@ -70,6 +70,13 @@ OAuth Tokens > Bot User OAuth Token 생성하기
 OAuth Tokens > Bot User OAuth Token 값을 따로 저장(Secret Manager 에 보관예정)
 <img width="1274" alt="image" src="https://github.com/user-attachments/assets/01769d24-304f-40db-be54-0674601af23a" />
 
+Slack내 aws-chatops-workshop 채널에 위에서 생성한 msg-fwd APP이 배포되어 있는 것을 확인
+<img width="898" alt="image" src="https://github.com/user-attachments/assets/458e6880-58bf-4cd4-b776-f7e869bdb8cf" />
+
+aws-chatops-workshop 채널에 msg-fwd APP을 초대(@msg-fwd)해 줍니다.
+<img width="910" alt="image" src="https://github.com/user-attachments/assets/a72a23e4-a69b-4ab1-8389-9b92b0b8ac1d" />
+
+
 
 
 
