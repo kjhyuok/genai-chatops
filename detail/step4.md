@@ -3,6 +3,24 @@
 ### 목표
 AWS Lambda와 API Gateway를 활용해 Slack 명령어로 Confluence에 데이터를 기록하는 기능 구현.
 
+step4 는 가장 난이도높음!
+
+시작시
+
+1.slack 앱생성-설정-키값생성
+
+2.new kms 에 키값넣기
+
+3.lambda 2 개 수정, kms 환경변수추가
+
+4.api gw 에 wiki url 연결후 lambda 통합
+
+5.최종테스트!
+
+- 메시지분석
+- 요약
+- 게시
+
 ### 실습 내용
 1. Amazon API Gateway에서 HTTP 엔드포인트 생성.
 2. AWS Lambda 함수 작성:
