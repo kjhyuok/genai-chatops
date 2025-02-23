@@ -1,8 +1,3 @@
-
-#        send_slack_message(channel_id, f"저는 Error MSG를 전달하는 AWS ChatBot 입니다. ", thread_ts)
-#        send_slack_message(channel_id, f"<@aws> ask bora "+"에게 이 오류에 대한 분석을 요청할게\n" + f"*MSG 원문*:\n{error_message}", thread_ts)
-#        send_slack_message(channel_id, "분석중이니 잠시만 기다려주세요.", thread_ts)
-
 import json
 import logging
 import os
@@ -21,13 +16,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
-
-#OAUTH_TOKEN = os.getenv('SLACK_OAUTH_TOKEN')
-#WIKI_URL = os.getenv('WIKI_URL')
-#WIKI_API_KEY = os.getenv('WIKI_API_KEY')
-#WIKI_USER = os.getenv('WIKI_USER')
-#AGENT_ID = os.getenv('AGENT_ID')
-#ALIAS_ID = os.getenv('ALIAS_ID')
 
 def get_secret(secret):
     secret_name = os.getenv('SLACK_TOKEN_SECRET')
@@ -64,7 +52,6 @@ SLACK_HEADERS = {
 }
 session = boto3.Session()
 	
-
 def get_user_name(user_id, user_name_cache):
     if user_id not in user_name_cache:
         response = requests.get(f"https://slack.com/api/users.info?user={user_id}", headers=SLACK_HEADERS)
@@ -79,10 +66,10 @@ def send_slack_message(channel, text, thread_ts=None):
 def create_confluence_page(content):
     confluence = Confluence(url=WIKI_URL, username=WIKI_USER, password=WIKI_API_KEY)
     response = confluence.create_page(
-        space="WinningGen",
+        space="issuehistory",
         title=f"slack reporting - {datetime.now().strftime('%Y.%m.%d %H:%M')}",
-        body="(AWS Bedrock에 의해 요약 작성된 내용입니다.)<br><br>" + content.replace("\n", "<br>"),
-        parent_id="2129937"
+        body="(Amazon Bedrock에 의해 요약 작성된 내용입니다.)<br><br>" + content.replace("\n", "<br>"),
+        parent_id="66184"
     )
     return response.get("id")
 
@@ -92,7 +79,7 @@ def invoke_bedrock_agent(input_text, analysis_type, session_id):
         'analysis': "Please analyze the following error. All conversations should be in Korean: ",
         'summary': "Summarize the following conversation. Include information about the cause, status of the solution, and involved participants: "
     }
-    client = session.client('bedrock-agent-runtime', region_name='ap-northeast-2', config=botocore.config.Config(read_timeout=900, connect_timeout=900, retries={"max_attempts": 0}))
+    client = session.client('bedrock-agent-runtime', region_name='us-west-2', config=botocore.config.Config(read_timeout=900, connect_timeout=900, retries={"max_attempts": 0}))
     try:
         response = client.invoke_agent(
             agentAliasId=ALIAS_ID,
@@ -115,7 +102,7 @@ def get_comments_thread(channel_id, thread_ts):
     try:
         bedrock_response = invoke_bedrock_agent(replies_text, 'summary', thread_ts)
         page_id = create_confluence_page(bedrock_response)
-        send_slack_message(channel_id, f"Report가 등록되었습니다.\n{WIKI_URL}/spaces/WinningGen/pages/{page_id}", thread_ts)
+        send_slack_message(channel_id, f"Report가 등록되었습니다.\n{WIKI_URL}/spaces/issuehistory/pages/{page_id}", thread_ts)
         return {"result": bedrock_response}
     except SlackApiError as e:
         logger.error(f"Slack API error: {e.response['error']}")
@@ -137,16 +124,9 @@ def lambda_handler(event, context):
             None
         )
         send_slack_message(channel_id, f"저는 Error MSG를 전달하는 AWS ChatBot 입니다. ", thread_ts)
-        send_slack_message(channel_id, f"<@aws> ask bora "+"에게 이 오류에 대한 분석을 요청할게\n" + f"*MSG 원문*:\n{error_message}", thread_ts)
+        send_slack_message(channel_id, f"<@q> ask 커넥터이름 "+"에게 이 오류에 대한 분석을 요청할게\n" + f"*MSG 원문*:\n{error_message}", thread_ts)
         send_slack_message(channel_id, "분석중이니 잠시만 기다려주세요.", thread_ts)        
-        #send_slack_message(channel_id, "메시지를 처리 중입니다. 잠시만 기다려주세요.", thread_ts)
-        #try:
-        #    bedrock_response = invoke_bedrock_agent(event['message']['blocks'][0]['text']['text'], 'analysis', thread_ts)
-        #    WebClient(token=OAUTH_TOKEN).chat_postMessage(channel=event['channel']['name'], thread_ts=event['container']['message_ts'], text=bedrock_response)
-        #    return {"result": bedrock_response}
-        #except SlackApiError as e:
-        #    logger.error(f"Slack API error: {e.response['error']}")
-        #    return {"result": "Slack reply failed"}
+
     elif bt_value == "click_reporting":
         send_slack_message(channel_id, "Reporting 생성 중입니다. 잠시만 기다려주세요.", thread_ts)
         get_comments_thread(channel_id, thread_ts)
