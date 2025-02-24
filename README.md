@@ -49,7 +49,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화<
 
 아래는 이 Workshop을 통해 구현될 전체 아키텍처입니다:
 
-  ![솔루션 개요](img/readme-5.png)<br
+  ![솔루션 개요](img/readme-5.png)<br>
   ![솔루션 개요](img/readme-6.png)
 <br>
 이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 Step별로 구현해 보겠습니다.<br><br><br>
