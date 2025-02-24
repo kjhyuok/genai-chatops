@@ -56,7 +56,7 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 ![image](https://github.com/user-attachments/assets/0cb9b5a7-a554-46ce-877d-a219d7407e00)
 
 **7. Review 후 최종 생성**
-> 최종 생성까지는 약 3\~4분이 소요됩니다.
+> 최종 생성까지는 약 3\~4분이 소요됩니다.<br><br>
 
 🚩**Atlassian Confluence를 Data source 선택하기**<br>
 앞서 Knowledge Bases를 최초 생성하는 과정에서 Amazon S3를 Data source 로 추가한 바 있습니다.<br> 
@@ -65,7 +65,7 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 이 설정에서는 Amazon Knowledge Bases 와 Atlassian Confluence 간의 Authentication이 필요합니다. 
 이 과정에서 Authentication method 로 Basic Authentication 을 선택하게 되는데 안전한 인증을 위해 AWS Secrets Manager Secret 의 ARN을 통해서 진행합니다.
 따라서 이 인증을 위해서 AWS Secrets Manager Secret 를 미리 생성해 보겠습니다. 
-원활한 Workshop을 위해 강사가 제공하는 아래의 정보(Atlassian Confluence 인증키)를 참고해서 Secret 생성해 주세요.
+원활한 Workshop을 위해 강사가 제공하는 아래의 정보(Atlassian Confluence 인증키)를 참고해서 Secret 생성해 주세요.<br>
 
 **Secret Manager Screts 생성하기**
 메뉴이동: [AWS Secrets Manager](https://us-west-2.console.aws.amazon.com/secretsmanager/landing?region=us-west-2)<br>
