@@ -46,22 +46,6 @@ Resources:
       Timeout: 30
       MemorySize: 128
 
-  # Lambda Execution Role
-  LambdaExecutionRole:
-    Type: 'AWS::IAM::Role'
-    Properties:
-      RoleName: !Sub ${AWS::StackName}-LambdaRole
-      Description: "Lambda execution role with Secrets Manager and Bedrock access"
-      AssumeRolePolicyDocument:
-        Version: '2012-10-17'
-        Statement:
-          - Effect: Allow
-            Principal:
-              Service: lambda.amazonaws.com
-            Action: sts:AssumeRole
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-
   # API Gateway
   ApiGateway:
     Type: 'AWS::ApiGateway::RestApi'
@@ -135,7 +119,7 @@ Resources:
       Principal: apigateway.amazonaws.com
       SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/*/*'
 
-# Lambda IAM Role
+  # Lambda IAM Role
   LambdaExecutionRole:
     Type: AWS::IAM::Role
     Properties:
