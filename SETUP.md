@@ -24,25 +24,7 @@
 
 1. **Oregon (us-west-2) 리전**에서 실습 진행 여부를 확인합니다.
 
-2. Console 하단 CloudShell 오픈
-![CloudFormation Template Upload2](./images/CloudFormation-2.png)
-
-
-4. 아래 명령어 실행
-```shell
-git clone https://github.com/kevmyung/aws-kr-retail-cpg-genai.git
-aws cloudformation create-stack --stack-name gen-ai-workshop --template-body file://aws-kr-retail-cpg-genai/genai-workshop.yaml --capabilities CAPABILITY_NAMED_IAM
-
-```
-
-
-## Step 3. 자원 배포 상태 확인
-1. [CloudFormation 콘솔](https://us-west-2.console.aws.amazon.com/cloudformation)에서 자원 배포상태가 `CREATE_IN_PROGRESS`인지 확인합니다.
-
-2. 자원 생성 완료까지 약 30분 소요됩니다.
-
-
-## Step 4. Bedrock 초기 설정
+## Step 3. Bedrock 초기 설정
 
 1. [Bedrock 콘솔](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/)로 이동합니다.
 
@@ -51,6 +33,16 @@ aws cloudformation create-stack --stack-name gen-ai-workshop --template-body fil
 3. Amazon 전체 모델과 Anthropic 모델 중 Claude 3.5 Sonnet 을 선택하고, 하단의 **Save changes** 버튼을 누릅니다.
  <img width="780" alt="image" src="https://github.com/user-attachments/assets/72c6b276-5201-4dde-b313-b84cff0a0eb9" />
 
-5. 잠시 후 모델의 Access status가 `Access granted`로 변경됩니다.
+4. 잠시 후 모델의 Access status가 `Access granted`로 변경됩니다.
 
-실습 준비가 완료되었습니다. 진행자의 안내에 따라 실습을 진행해 주세요.
+이제 AWS Workshop Account에 진입하여, Bedrock 모델 활성화 까지 완료 했습니다.<br>
+Workshop을 위한 기본적인 준비가 완료되었습니다.<br>
+
+본 Workshop에서 활용되는 서비스는 다양하기 때문에 AWS Cloudformation을 통해서 몇가지 AWS Resource를 자동으로 생성하고 시작합니다.<br>
+- AWS Lambda
+- Amazon S3
+- Amazon API Gateway
+
+---
+
+이제 AWS Cloudformation 수행을 위한 [Preparations](cloudformation/README.md) 으로 이동!
