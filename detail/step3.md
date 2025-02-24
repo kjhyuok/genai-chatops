@@ -9,7 +9,7 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 ### 실습 내용
 1. Slack 계정을 신규로 생성하고, 워크스페이스와 채널을 만들기.
 2. Amazon Q Developer in chat applications(구: AWS Chatbot)을 Slack에 배포.
-3. Amazon Bedrock Agent와 Amazon Q Developer 와 연동.
+3. Amazon Q Developer 와 Slack의 채널간 연동.
    - 이 작업을 통해 Slack에서 Agent가 Amazon Bedrock에게 질의를 할 수 있게 됩니다.
 4. Slack의 Channel에서 Amazon Bedrock LLM을 호출하기 위한 Connector 설정.
 
@@ -21,6 +21,9 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 본 Workshop에서 활용할 Slack을 무료버전으로 간단히 만들어 봅니다. (🚩업무에 불편을 주지 않을 Pure한 실습용 E-Mail로 만들어 주세요.)<br>
 [Slack 가입하기](https://slack.com/intl/ko-kr/get-started?utm_source=google&utm_medium=paid_search&utm_campaign=kr__20241202&gclid=EAIaIQobChMI94iphN_YiwMVIeoWBR2xUx5bEAAYASAAEgLbJvD_BwE&campaign=701ed00000BwjL3AAJ&lpt=1#/createnew)
 
+<details>
+  <summary>📌 Slack 무료플랜 퀵하게 가입하기!</summary><br>
+   
 <img width="680" alt="image" src="https://github.com/user-attachments/assets/b5dd436d-15bb-4f0b-a370-7828d39f2641" />
 
 워크스페이스를 생성합니다. 
@@ -38,11 +41,16 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 성공적으로 새로운 Slack 워크스페이스(**aws-chatops-workshop-본인Alias지정**)를 생성하고, 새로운 채널(**aws-chatops-workshop**)까지 Web브라우저에서 완료했습니다.
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/75b966bf-0240-47e3-a05e-54f0014b27ac" />
 
+</details>
+
 ## 2. Amazon Q Developer in chat applications(구: AWS Chatbot)을 Slack에 배포.<br>
 
 자 이제 지금 생성한 Slack의 워크스페이스와 Step2에서 생성한 Amazon Bedrock Agent와의 Connector 역할을 수행할 Amazon Q Developer in chat applications 를 생성해 봅니다.
 메뉴이동: [Amazon Q Developer in chat applications](https://us-east-2.console.aws.amazon.com/chatbot/home?region=us-west-2#/)
 
+<details>
+  <summary>📌 Slack 에 배포될 Amazon Q Developer 생성하기!</summary><br>
+   
 우측에서 채팅 클라이언트를 Slack으로 선택해주시고 클라이언트 구성선택을 해주세요.
 
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/77eb26df-2058-4aae-b4e7-d56ac07fae67" />
@@ -60,12 +68,16 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 이렇게 들어온 Slack에는 앞서 Amazon Q Developer in chat applications 을 통해서 생성했던 Amazon Q가 APP에 배포되어 있는 것을 확인 할 수 있습니다.<br>
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/0c565eff-ce6f-4e46-b7a8-f22740bd55d5" />
 
+</details>
 
-## 3. Amazon Bedrock Agent와 Amazon Q Developer 와 연동.
-Amazon Q Developer in chat applications(구: AWS Chatbot)은 Amazon Chime 이나 Slack과 연동하여 업무 자동화를 구현할 수 있는 서비스 입니다. 최근에는 Slack 과 연동한 AWS Chatbot과 Amazon Bedrock Agents와의 통합을 기점으로 더욱 손쉽게 Slack뿐만아니라 Microsoft Teams 채팅 채널에서 직접 Amazon Bedrock Agent와 상호작용이 가능하게 되어 기존에 비해 훨씬 심플하게 Amazon Bedrock과의 연동을 할 수 있게 되었습니다. 
+## 3. Amazon Q Developer 와 Slack의 채널간 연동.
+Amazon Q Developer in chat applications(구: AWS Chatbot)은 Amazon Chime 이나 Slack과 연동하여 업무 자동화를 구현할 수 있는 서비스 입니다. 최근에는 Slack 과 연동한 Amazon Q Developer 로 Amazon Bedrock을 쉽게 호출할 수 있게 되었습니다. 
 
-이제 앞서 생성해서 Slack에 배포한 APP(이 Amazon Q Developer)을 Step2에서 구성한 Amazon Bedrock Agent와 연결해 보겠습니다.<br>
-Agent와 연결을 위해서는 다음과 같은 설정이 필요합니다.
+<details>
+  <summary>📌 Amazon Q Developer 와 Slack의 채널간 연동하기! </summary><br>
+   
+이제 앞서 생성해서 Slack에 배포한 APP(이 Amazon Q Developer)을 위해 Slack channel 동일한 이름으로 생성하여 연결해 보겠습니다.<br>
+다음과 같은 설정이 필요합니다.
 
 Amazon Q Developer in chat applications 메뉴에서 Slack WorkSpace: **aws-chatops-workshop-JK** 에 진입합니다.<br>
 **새로운 채널 구성** 을 선택하여 환경설정을 해봅니다.
@@ -98,7 +110,13 @@ Amazon Q Developer in chat applications 메뉴에서 Slack WorkSpace: **aws-chat
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/bb50d665-8e4a-4469-9843-34c8586ba063" />
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/77de2012-f426-40e1-a5db-a470154399e5" />
 
+</details>
+
 ## 4. Slack의 Channel에서 Amazon Bedrock LLM을 호출하기 위한 Connector 설정.
+
+<details>
+  <summary>📌 Slack에서 Amazon Bedrock LLM을 호출하기 위한 Connector 설정하기! </summary><br>
+   
 Slack의 Channel에서 Amazon Bedrock Agents 가 Amazon Bedrock 의 FM(Foundation Model)을 호출하기 위해서는 최초 1회 Connector 설정이 필요 하며 그 방법은 아래와 같습니다.
 1. [Amazon Bedrock Agents](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/agents) > Step2에서 생성한 **agent-quick-start-2025** 진입
 2. Agent의 ARN을 확인해서 복사해 둡니다.
@@ -124,6 +142,8 @@ Slack에서 Amazon Q를 통해서 Bedrock Agent를 호출하는 방법입니다.
 >Connector 삭제하기: @Amazon Q connector delete 커넥터이름.<br>
 >Slack 채널내 등록된 Connector 리스트보기: @Amazon Q connector list<br>
 >자세한 Connector 관련 설정 및 명령은 [공식 Doc](https://docs.aws.amazon.com/ko_kr/chatbot/latest/adminguide/bedrock-update.html) 를 참고하세요.<br>
+
+</details>
 
 ***
 
