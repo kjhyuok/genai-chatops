@@ -33,3 +33,7 @@ chmod +x ./deploy.sh
 2. chatops-stack 스택이 CREATE_COMPLETE 을 확인하고, Outputs 에서 API Gateway, S3 등 완성한 리소스를 확인할 수 있습니다.
 
 ![결과화면](./cloudformation_output.png)
+
+---
+
+배포를 완료했다면 [Step 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성](step1.md)으로 이동합니다.
