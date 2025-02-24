@@ -7,18 +7,18 @@
 
 1. **이메일 OTP 인증 선택**
 
-   ![OTP 인증](./images/Event_Engine_OTP.png)
+   ![image](https://github.com/user-attachments/assets/8bdaf9d8-18a8-4f35-9db8-c71b86b7014c)
 
-2. **이메일로 전송된 Passcode 입력**
 
-   ![Passcode 입력](./images/Event_Engine_New_Email.png)
+3. **이메일로 전송된 Passcode 입력**
 
-3. **AWS 콘솔 열기**
+   ![image](https://github.com/user-attachments/assets/94f045f2-173b-44c3-ac70-e9372d19b8de)
+
+5. **AWS 콘솔 열기**
 
    좌측 하단의 **Open AWS console** 버튼을 클릭하여 실습 계정으로 이동합니다.
 
-   ![AWS 콘솔 로그인](./images/Event_Engine_Detail.png)
-
+   <img width="980" alt="image" src="https://github.com/user-attachments/assets/8ad565eb-df82-46a8-8ea1-0a69e60670ef" />
 
 ## Step 2. 실습 자원 배포
 
