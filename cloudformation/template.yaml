@@ -70,6 +70,15 @@ Resources:
           - arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaArn}/invocations
           - LambdaArn: !GetAtt FirstLambdaFunction.Arn
 
+  # Lambda Permission for root path
+  RootLambdaPermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName: !Ref FirstLambdaFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/POST/'
+
   # API Gateway Resource
   FirstApiResource:
     Type: 'AWS::ApiGateway::Resource'
@@ -106,7 +115,7 @@ Resources:
       Action: 'lambda:InvokeFunction'
       FunctionName: !Ref FirstLambdaFunction
       Principal: apigateway.amazonaws.com
-      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/*/*'
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/POST/slack-action'
 
   # Lambda IAM Role
   LambdaExecutionRole:
@@ -176,7 +185,7 @@ Resources:
     Properties:
       DeploymentId: !Ref ApiDeployment
       RestApiId: !Ref ApiGateway
-      StageName: 'prod'
+      StageName: 'v1'
 
 Outputs:
   BucketName:
@@ -186,10 +195,14 @@ Outputs:
   FirstLambdaFunction:
       Value: !GetAtt FirstLambdaFunction.Arn
 
-  FirstApiEndpoint:
-    Description: 'First API Gateway endpoint URL'
-    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/slack-action'
+  RootEndpoint:
+    Description: 'Root API Gateway endpoint URL'
+    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/v1/'
   
+  FirstApiEndpoint:
+    Description: 'Slack Action API Gateway endpoint URL'
+    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/v1/slack-action'
+
   AdministratorRoleName:
     Description: "Administrator Role Name"
     Value: !Ref AdministratorRole
