@@ -50,6 +50,8 @@ Resources:
   LambdaExecutionRole:
     Type: 'AWS::IAM::Role'
     Properties:
+      RoleName: !Sub ${AWS::StackName}-LambdaRole
+      Description: "Lambda execution role with Secrets Manager and Bedrock access"
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -69,15 +71,29 @@ Resources:
         Types:
           - REGIONAL
 
+  # API Gateway Method
+  RootMethod:
+    Type: 'AWS::ApiGateway::Method'
+    Properties:
+      RestApiId: !Ref ApiGateway
+      ResourceId: !GetAtt ApiGateway.RootResourceId
+      HttpMethod: POST  # 필요한 HTTP 메서드로 변경 가능
+      AuthorizationType: NONE
+      Integration:
+        Type: AWS
+        IntegrationHttpMethod: POST
+        Uri: !Sub 
+          - arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaArn}/invocations
+          - LambdaArn: !GetAtt FirstLambdaFunction.Arn
+
   # API Gateway Resource
   FirstApiResource:
     Type: 'AWS::ApiGateway::Resource'
     Properties:
       RestApiId: !Ref ApiGateway
       ParentId: !GetAtt ApiGateway.RootResourceId
-      PathPart: 'gw-to-slack'
+      PathPart: 'slack-action'
 
-  # API Gateway Method
   FirstApiMethod:
     Type: 'AWS::ApiGateway::Method'
     Properties:
@@ -86,9 +102,29 @@ Resources:
       HttpMethod: POST
       AuthorizationType: NONE
       Integration:
-        Type: AWS_PROXY
+        Type: AWS
         IntegrationHttpMethod: POST
-        Uri: !Sub 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${FirstLambdaFunction.Arn}/invocations'
+        Uri: !Sub 
+          - arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaArn}/invocations
+          - LambdaArn: !GetAtt FirstLambdaFunction.Arn
+        PassthroughBehavior: WHEN_NO_TEMPLATES
+        ContentHandling: CONVERT_TO_TEXT
+        RequestParameters: {}
+        RequestTemplates: 
+          "application/x-www-form-urlencoded": |
+            #set($payload = $input.body.split("="))
+            #set($decodedPayload = $util.urlDecode($payload[1]))
+            {
+              "body": $decodedPayload
+            }
+      MethodResponses:
+        - StatusCode: '200'
+          ResponseModels:
+            application/json: 'Empty'
+      IntegrationResponses:
+        - StatusCode: '200'
+          ResponseTemplates:
+            application/json: '{"message": "Success"}'
 
   # Lambda Permission for API Gateway
   FirstLambdaPermission:
@@ -97,44 +133,67 @@ Resources:
       Action: 'lambda:InvokeFunction'
       FunctionName: !Ref FirstLambdaFunction
       Principal: apigateway.amazonaws.com
-      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/*/gw-to-slack'
+      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/*/*'
 
-  # Second Lambda API Resources
-  SecondApiResource:
-    Type: 'AWS::ApiGateway::Resource'
+# Lambda IAM Role
+  LambdaExecutionRole:
+    Type: AWS::IAM::Role
     Properties:
-      RestApiId: !Ref ApiGateway
-      ParentId: !GetAtt ApiGateway.RootResourceId
-      PathPart: 'msg-to-slack'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: SecretsManagerAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - secretsmanager:GetSecretValue
+                  - secretsmanager:DescribeSecret
+                  - secretsmanager:ListSecrets
+                  - secretsmanager:UpdateSecret
+                  - secretsmanager:CreateSecret
+                  - secretsmanager:DeleteSecret
+                Resource: '*'
+        - PolicyName: BedrockAccess
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - bedrock:*
+                Resource: '*'
 
-  SecondApiMethod:
-    Type: 'AWS::ApiGateway::Method'
+  # Administrator Role
+  AdministratorRole:
+    Type: AWS::IAM::Role
     Properties:
-      RestApiId: !Ref ApiGateway
-      ResourceId: !Ref SecondApiResource
-      HttpMethod: POST
-      AuthorizationType: NONE
-      Integration:
-        Type: AWS_PROXY
-        IntegrationHttpMethod: POST
-        Uri: !Sub 'arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SecondLambdaFunction.Arn}/invocations'
-
-  # Lambda Permission for API Gateway
-  SecondLambdaPermission:
-    Type: 'AWS::Lambda::Permission'
-    Properties:
-      Action: 'lambda:InvokeFunction'
-      FunctionName: !Ref SecondLambdaFunction
-      Principal: apigateway.amazonaws.com
-      SourceArn: !Sub 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${ApiGateway}/*/*/msg-to-slack'
-
+      RoleName: !Sub ${AWS::StackName}-ChatbotAdminRole
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: 
+                - lambda.amazonaws.com
+            Action: 
+              - sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AdministratorAccess
 
   # API Gateway Deployment
   ApiDeployment:
     Type: 'AWS::ApiGateway::Deployment'
     DependsOn:
+      - RootMethod
       - FirstApiMethod
-      - SecondApiMethod
     Properties:
       RestApiId: !Ref ApiGateway
 
@@ -153,13 +212,11 @@ Outputs:
   
   FirstLambdaFunction:
       Value: !GetAtt FirstLambdaFunction.Arn
-  SecondLambdaFunction:
-      Value: !GetAtt SecondLambdaFunction.Arn
 
   FirstApiEndpoint:
     Description: 'First API Gateway endpoint URL'
-    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/gw-to-slack'
+    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/slack-action'
   
-  SecondApiEndpoint:
-    Description: 'Second API Gateway endpoint URL'
-    Value: !Sub 'https://${ApiGateway}.execute-api.${AWS::Region}.amazonaws.com/prod/msg-to-slack'
+  AdministratorRoleName:
+    Description: "Administrator Role Name"
+    Value: !Ref AdministratorRole
