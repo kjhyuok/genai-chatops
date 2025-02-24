@@ -189,6 +189,9 @@ Resources:
       RestApiId: !Ref ApiGateway
       StageName: 'prod'
 
+Capabilities:
+  - CAPABILITY_NAMED_IAM
+  
 Outputs:
   BucketName:
     Description: 'S3 Bucket Name'
