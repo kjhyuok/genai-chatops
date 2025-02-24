@@ -27,8 +27,8 @@
 1. Slack에서의 협업 및 문제 해결(①,②,③,④,⑤)
 2. 분석 된 문제를 요약 후 게시글 생성(⑥)
 3. 지속적인 학습 및 개선활용(⑦)
-  
-<img width="1600" alt="image" src="https://github.com/user-attachments/assets/e568b940-b637-4421-add3-311c6c020d85" />
+
+  ![솔루션 개요](img/readme-1.png)
 
 ---
 
@@ -37,20 +37,20 @@
 이 Workshop을 완료하면 다음과 같이 IT서비스 운영에 활용되는 Usecase를 경험해 볼 수 있습니다.
 
 Usecase 1 : 운영중 수신되는 Error Message에 대한 빠른 분석
-<img width="780" alt="image" src="https://github.com/user-attachments/assets/442c812a-98de-48b7-8e1e-6aa33da3af79" />
+  ![솔루션 개요](img/readme-2.png)
 
 Usecase 2 : Knowledge Bases 를 통한 문제의 근본 원인 분석 및 해결 방안 제시
-<img width="780" alt="image" src="https://github.com/user-attachments/assets/a5466e02-aeb8-40c0-93c5-025fbe60deb2" />
+  ![솔루션 개요](img/readme-3.png)
 
 Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
-<img width="780" alt="image" src="https://github.com/user-attachments/assets/a21f8fce-9c7a-49f0-8d15-df25cf3b0014" />
+  ![솔루션 개요](img/readme-4.png)
 
 ## 전체 아키텍처 및 흐름
 
 아래는 이 Workshop을 통해 구현될 전체 아키텍처입니다:
 
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/3115ef37-a187-4d18-9f18-7c6b7b8e709f" />
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/2b2e3c82-7712-435d-976f-e4ae648a0237" />
+  ![솔루션 개요](img/readme-5.png)
+  ![솔루션 개요](img/readme-6.png)
 <br><br>
 이 솔루션의 전체 아키텍처는 위와 같으며 이 Workshop에서는 아래의 Step별로 구현해 보겠습니다.<br><br><br>
 
