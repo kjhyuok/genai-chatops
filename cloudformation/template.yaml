@@ -101,14 +101,14 @@ Resources:
             {
               "body": $decodedPayload
             }
-      MethodResponses:
-        - StatusCode: '200'
-          ResponseModels:
-            application/json: 'Empty'
       IntegrationResponses:
         - StatusCode: '200'
           ResponseTemplates:
             application/json: '{"message": "Success"}'
+    MethodResponses:
+      - StatusCode: '200'
+        ResponseModels:
+          application/json: 'Empty'
 
   # Lambda Permission for API Gateway
   FirstLambdaPermission:
@@ -189,9 +189,6 @@ Resources:
       RestApiId: !Ref ApiGateway
       StageName: 'prod'
 
-Capabilities:
-  - CAPABILITY_NAMED_IAM
-  
 Outputs:
   BucketName:
     Description: 'S3 Bucket Name'
