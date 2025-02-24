@@ -36,4 +36,4 @@ chmod +x ./deploy.sh
 
 ---
 
-배포를 완료했다면 [Step 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성](detail/step1.md)으로 이동합니다.
+배포를 완료했다면 [Step 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성](./detail/step1.md)으로 이동합니다.
