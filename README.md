@@ -36,13 +36,13 @@
 
 이 Workshop을 완료하면 다음과 같이 IT서비스 운영에 활용되는 Usecase를 경험해 볼 수 있습니다.
 
-Usecase 1 : 운영중 수신되는 Error Message에 대한 빠른 분석
+Usecase 1 : 운영중 수신되는 Error Message에 대한 빠른 분석<br>
   ![솔루션 개요](img/readme-2.png)
 
-Usecase 2 : Knowledge Bases 를 통한 문제의 근본 원인 분석 및 해결 방안 제시
+Usecase 2 : Knowledge Bases 를 통한 문제의 근본 원인 분석 및 해결 방안 제시<br>
   ![솔루션 개요](img/readme-3.png)
 
-Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
+Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화<br>
   ![솔루션 개요](img/readme-4.png)
 
 ## 전체 아키텍처 및 흐름
