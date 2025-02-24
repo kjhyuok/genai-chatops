@@ -10,12 +10,17 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 
 ## 실습 내용
 1. 문서 및 데이터 업로드 (JSON, CSV, PDF 등 지원).
-2. Amazon Bedrock 메뉴에서 Knowledge Base 생성하기.
-3. 데이터 소스를 Knowledge Base 와 연동하기.
+2. Amazon Bedrock 메뉴에서 Knowledge Base 생성하기.(데이터소스로 S3 연동)
+3. Atlassian Confluence 데이터 소스를 Knowledge Base 와 연동하기.
 4. Knowledge Base를 테스트하여 업로드한 데이터에서 정확한 응답 생성 확인.
 
 ---
-## 1. Amazon Bedrock 메뉴에서 Knowledge Base 생성하기.<br>
+## 1. 다양한 IT팀의 문서 및 자산을 Amazon S3로 업로드. (JSON, CSV, PDF 등 지원)<br>
+[!클릭하여 Sample Datasource 를 로컬로 Download 합니다.](https://d1apwudp4l9c0h.cloudfront.net/kjhyuok/aws-chatops-bedrock/samples_knowledgebase.zip)<br>
+메뉴이동: [Amazon S3](https://us-west-2.console.aws.amazon.com/s3/get-started?region=us-west-2&bucketType=general)로 이동하여, 미리 생성된 Amazon S3 버킷명: **chatops-stack-bucket-accountID** 을 선택 후 좀전에 Download 받은 Zip을 압축해제 하고 파일을 Drag&Drop 합니다.<br>
+간단히 Amazon S3 버킷에 Sample Datasource를 업로드 완료 했습니다. 
+
+## 2. Amazon Bedrock 메뉴에서 Knowledge Base 생성하기.(데이터소스로 S3 연동)<br>
 메뉴이동: [Amazon Bedrock Knowledge Bases](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/knowledge-bases)<br>
 
 ![](https://static.us-east-1.prod.workshops.aws/public/88811a7e-410e-4614-835d-b5bdc1092470/static/images/kb_details.gif)
@@ -57,6 +62,8 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 
 **7. Review 후 최종 생성**
 > 최종 생성까지는 약 3\~4분이 소요됩니다.<br><br>
+
+## 3. Atlassian Confluence 데이터 소스를 Knowledge Base 와 연동하기.<br>
 
 🚩**Atlassian Confluence를 Data source 선택하기**<br>
 앞서 Knowledge Bases를 최초 생성하는 과정에서 Amazon S3를 Data source 로 추가한 바 있습니다.<br> 
@@ -109,7 +116,7 @@ Amazon Bedrock default parser
 > 2개의 Data Source 최초 sync까지는 약 10분\~20분이 소요됩니다. **Break Time**
 
 
-## Amazon Bedrock Knowledge Bases에 Sync 완료된 S3, Confluence 데이터 테스트 하기
+## 4.Amazon Bedrock Knowledge Bases에 Sync 완료된 S3, Confluence 데이터 테스트 하기
 1. Amazon Bedrock Knowledge Bases 콘솔에서 테스트 해 볼 수 있습니다.
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/20634edb-6bf6-4605-9195-ed333d4eb86e" />
 
