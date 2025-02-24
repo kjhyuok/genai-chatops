@@ -84,8 +84,8 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 - [Atlassian Confluence](https://www.atlassian.com/software/confluence) : 팀이 프로젝트나 아이디어를 통해 작업을 체계적으로 조직하고 공유하여 모든 팀원이 협업할 수 있는 도구이며, 팀의 지속적인 Knowledge Bases으로 활용 됩니다.
 
 ## 환경설정
-강사가 제공하는 AWS Workshop Account를 통해서 모든 실습을 진행합니다.
-- Slack은 개인별로 생성합니다.
+강사가 제공하는 AWS Workshop Account를 통해서 모든 실습을 진행합니다.<br>
+- Slack은 개인별로 생성합니다.<br>
   . 사내/개인용 Slack APP과 연동되지 않도록 Web브라우저를 통해서 실습 권장<br>
   . Slack에 가입 이력이 없는 New Email 계정 활용을 권장(ex> 기존Gmail+1@gmail.com)<br>
 - Atlassian Confluence는 강사가 제공하는 정보를 활용합니다.<br>
