@@ -17,11 +17,11 @@
 2. [Workshop의 결과물](#Workshop의-결과물)
 3. [전체 아키텍처 및 흐름](#전체-아키텍처-및-흐름)
 4. [필수 조건 및 AWS 서비스 구성](#필수-조건-및-AWS-서비스-구성)
-5. [환경 설정](#환경-설정)
+6. [환경설정](#환경설정)
 
 ---
 
-## Workshop 소개: 생성형 AI 기반 문제 분석 및 활용
+## Workshop 소개
 
 이 Workshop에서는 위와 같은 문제를 지원하기 위해 AWS의 생성형 AI서비스와 기업에서 주로 활용중인 협업 도구인 Slack, Atlassian Confluence를 통합한 생성형 AI 기반 클라우드 운영 지원 솔루션을 소개할 예정입니다. 솔루션은 아래 그림과 같이 총 3개의 주요한 흐름으로 구성되어 있습니다.
 1. Slack에서의 협업 및 문제 해결(①,②,③,④,⑤)
@@ -32,7 +32,7 @@
 
 ---
 
-## Workshop의 결과물: 
+## Workshop의 결과물 
 
 이 Workshop을 완료하면 다음과 같이 IT서비스 운영에 활용되는 Usecase를 경험해 볼 수 있습니다.
 
@@ -82,6 +82,16 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 - [AWS Secrets Manager](https://docs.aws.amazon.com/ko_kr/secretsmanager/latest/userguide/intro.html) : 데이터베이스나 애플리케이션의 보안 인증, OAuth 토큰, API 키 및 기타 암호를 관리, 검색, 교체할 수 있습니다. 이 블로그에서는 AWS Lambda가 수행할 Task에 필요한 협업도구의 인증 정보들를 Secrets 으로 저장하고 AWS Lambda의 환경변수로 활용했습니다.
 - [Slack](https://slack.com/intl/ko-kr/) :운영팀이 익숙하게 사용하는 협업 도구로 Message 전달용 Bot과 연동하고AWS Chatbot과 통합하여 실시간 문제 해결을 Agents connector 로 수행합니다.
 - [Atlassian Confluence](https://www.atlassian.com/software/confluence) : 팀이 프로젝트나 아이디어를 통해 작업을 체계적으로 조직하고 공유하여 모든 팀원이 협업할 수 있는 도구이며, 팀의 지속적인 Knowledge Bases으로 활용 됩니다.
+
+## 환경설정
+강사가 제공하는 AWS Workshop Account를 통해서 모든 실습을 진행합니다.
+- Slack은 개인별로 생성합니다.
+  . 사내/개인용 Slack APP과 연동되지 않도록 Web브라우저를 통해서 실습 권장<br>
+  . Slack에 가입 이력이 없는 New Email 계정 활용을 권장(ex> 기존Gmail+1@gmail.com)<br>
+- Atlassian Confluence는 강사가 제공하는 정보를 활용합니다.<br>
+  . URL 정보<br>
+  . Account Email 정보<br>
+  . API Key 정보
 
 ---
 
