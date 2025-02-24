@@ -20,7 +20,7 @@
 
    <img width="980" alt="image" src="https://github.com/user-attachments/assets/8ad565eb-df82-46a8-8ea1-0a69e60670ef" />
 
-> 반드시 **Oregon (us-west-2) 리전**에서 실습 진행 여부를 확인합니다.
+> 🚩반드시 **Oregon (us-west-2) 리전** 을 확인합니다.
 
 ## Step 2. Bedrock 초기 설정
 
