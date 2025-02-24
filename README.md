@@ -61,7 +61,7 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 * [Step3](detail/step3.md) - Log 모니터링 및 알림 메시지 수신을 위한 Slack 구성 및 AWS와 연동<br>
   (실제 IT운영에서는 다양한 경로로 수집될 것이나 Workshop에서는 AWS Lambda로 임의 Error Log를 발생시킵니다.)<br>
 * [Step4](detail/step4.md) - AWS Lambda 와 Amazon API Gateway로 Slack과 Confluence 연동<br>
-* [Step5)](detail/step5.md) - 시나리오 기반으로 테스트 하기
+* [Step5](detail/step5.md) - 시나리오 기반으로 테스트 하기
 
 ---
 
