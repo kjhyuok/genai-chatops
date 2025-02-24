@@ -20,11 +20,9 @@
 
    <img width="980" alt="image" src="https://github.com/user-attachments/assets/8ad565eb-df82-46a8-8ea1-0a69e60670ef" />
 
-## Step 2. 실습 자원 배포
+> 반드시 **Oregon (us-west-2) 리전**에서 실습 진행 여부를 확인합니다.
 
-1. **Oregon (us-west-2) 리전**에서 실습 진행 여부를 확인합니다.
-
-## Step 3. Bedrock 초기 설정
+## Step 2. Bedrock 초기 설정
 
 1. [Bedrock 콘솔](https://us-west-2.console.aws.amazon.com/bedrock/home?region=us-west-2#/)로 이동합니다.
 
