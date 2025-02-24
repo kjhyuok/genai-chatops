@@ -47,5 +47,5 @@ aws cloudformation deploy \
     --stack-name $STACK_NAME \
     --parameter-overrides \
         S3BucketLambdaCode=$BUCKET_NAME \
-    --capabilities CAPABILITY_IAM \
+    --capabilities CAPABILITY_NAMED_IAM \
     --region $AWS_REGION
