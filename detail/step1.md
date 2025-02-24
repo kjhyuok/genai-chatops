@@ -1,4 +1,4 @@
-# Step 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성
+## Step 1: IT운영팀의 업무자산을 Amazon Bedrock Knowledge Bases로 구성
 
 ### 목표
 Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 구성하고, Retrieval-Augmented Generation(RAG) 워크플로를 설정합니다.<br>
