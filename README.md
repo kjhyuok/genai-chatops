@@ -67,12 +67,6 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 
 ## AWS 서비스 구성
 
-📌 이 Workshop을 수행하려면 다음이 준비되어야 합니다:
-- AWS Account(실습용 제공)
-- Slack 개인계정
-- Atlassian Confluence Account(강사계정 활용예정)
-- 인터넷 브라우저: 이 워크샵에서는 최신 버전의 Chrome 또는 Firefox를 사용하는 것이 좋습니다.
-
 📌 이 Workshop에서 활용되는 서비스는 다음과 같습니다:
 - [Amazon Bedrock](https://aws.amazon.com/ko/bedrock/?gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDBE17GRP0CN9_RYey5dt_x4D8ZOkbwhjaOYxXRQJBIjXvMEX_-iaqsaAsBpEALw_wcB&trk=24a8f13a-f5db-4127-bcb7-8b2876aa4265&sc_channel=ps&ef_id=Cj0KCQiAu8W6BhC-ARIsACEQoDBE17GRP0CN9_RYey5dt_x4D8ZOkbwhjaOYxXRQJBIjXvMEX_-iaqsaAsBpEALw_wcB:G:s&s_kwcid=AL!4422!3!692062155749!e!!g!!amazon%20bedrock!21058131112!157173586057): Amazon Bedrock은 AWS의 생성형 AI 서비스로, Claude, AI21 Labs의 Jurassic-2, AWS Titan과 같은 대규모 언어 모델(LLM)을 제공합니다. 이를 통해 로그 분석, 문제 원인 파악, 해결 방안 제안, 자동 요약 생성 등 다양한 AI 작업을 수행할 수 있습니다.
 - [Agents for Amazon Bedrock](https://aws.amazon.com/ko/bedrock/agents/): 워크플로를 간소화하고 반복적인 작업을 자동화며 사용자 요청을 처리하고, 필요한 정보를 수집하며, 효율적으로 응답을 생성하는 역할을 합니다.
@@ -84,14 +78,17 @@ Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화
 - [Atlassian Confluence](https://www.atlassian.com/software/confluence) : 팀이 프로젝트나 아이디어를 통해 작업을 체계적으로 조직하고 공유하여 모든 팀원이 협업할 수 있는 도구이며, 팀의 지속적인 Knowledge Bases으로 활용 됩니다.
 
 ## 환경설정
-강사가 제공하는 AWS Workshop Account를 통해서 모든 실습을 진행합니다.<br>
-- Slack은 개인별로 생성합니다.<br>
+
+📌 이 Workshop을 수행하려면 다음이 준비되어야 합니다:
+- AWS Account: 강사가 제공하는 AWS Workshop Account를 통해서 모든 실습을 진행합니다.<br>
+- Slack 계정: Slack은 개인별로 생성합니다.<br>
   . 사내/개인용 Slack APP과 연동되지 않도록 Web브라우저를 통해서 실습 권장<br>
   . Slack에 가입 이력이 없는 New Email 계정 활용을 권장(ex> 기존Gmail+1@gmail.com)<br>
-- Atlassian Confluence는 강사가 제공하는 정보를 활용합니다.<br>
+- Atlassian Confluence: Atlassian Confluence는 강사가 제공하는 정보를 활용합니다.<br>
   . URL 정보<br>
   . Account Email 정보<br>
   . API Key 정보
+- 인터넷 브라우저: 이 워크샵에서는 최신 버전의 Chrome 또는 Firefox를 사용을 권장 드립니다.
 
 ---
 
