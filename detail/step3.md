@@ -139,9 +139,11 @@ Slack에서 Amazon Q를 통해서 Bedrock Agent를 호출하는 방법입니다.
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/605b036b-3f99-47d6-8ee9-e0ccedbc576e" />
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/d79b78dc-3cdd-45f5-bb51-8cd6e7f9f9a1" />
 
->Connector 삭제하기: @Amazon Q connector delete 커넥터이름.<br>
->Slack 채널내 등록된 Connector 리스트보기: @Amazon Q connector list<br>
->자세한 Connector 관련 설정 및 명령은 [공식 Doc](https://docs.aws.amazon.com/ko_kr/chatbot/latest/adminguide/bedrock-update.html) 를 참고하세요.<br>
+>[Connector 삭제하는 법]
+>@Amazon Q connector delete 커넥터이름<br>
+>[Slack 채널내 등록된 Connector 리스트보는 법]
+>@Amazon Q connector list<br>
+>❗️자세한 Connector 관련 설정 및 명령은 [공식 Doc](https://docs.aws.amazon.com/ko_kr/chatbot/latest/adminguide/bedrock-update.html) 를 참고하세요.<br>
 
 </details>
 
