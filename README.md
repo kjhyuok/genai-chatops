@@ -43,7 +43,7 @@ Usecase 2 : Knowledge Bases 를 통한 문제의 근본 원인 분석 및 해결
   ![솔루션 개요](img/readme-3.png)
 
 Usecase 3 : 분석이 완료된 내용을 Wiki에 등록하고 팀의 자산화<br>
-  ![솔루션 개요](img/readme-4.png)
+<img src="img/readme-4.png" style="width: 980px; height: auto;">
 
 ## 전체 아키텍처 및 흐름
 
