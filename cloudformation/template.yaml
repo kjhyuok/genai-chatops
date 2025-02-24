@@ -97,18 +97,7 @@ Resources:
         RequestTemplates: 
           "application/x-www-form-urlencoded": |
             #set($payload = $input.body.split("="))
-            #set($decodedPayload = $util.urlDecode($payload[1]))
-            {
-              "body": $decodedPayload
-            }
-      IntegrationResponses:
-        - StatusCode: '200'
-          ResponseTemplates:
-            application/json: '{"message": "Success"}'
-    MethodResponses:
-      - StatusCode: '200'
-        ResponseModels:
-          application/json: 'Empty'
+            $util.urlDecode($payload[1])
 
   # Lambda Permission for API Gateway
   FirstLambdaPermission:
