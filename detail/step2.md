@@ -50,14 +50,14 @@ Amazon Bedrock Agent를 생성하고, 이전 단계에서 구성한 Knowledge Ba
 
 - 아래와 같이 Knowledge Base instruction for agent를 작성해주고 Add 해줍니다.<br>
 이렇게 Instruction을 작성하게 되면 Knowledge Bases가 Agent와 상호 작용하는 방식에 영향을 미치게 됩니다.<br>
-```Refer to S3 & Confluence docs in Bedrock for AWS cloud questions from IT ops team via Slack. Use Claude Sonnet 3.5 v1 on Amazon Bedrock to accurately summarize and answer questions.```
+```Refer to S3 & Confluence docs in Bedrock for AWS cloud questions from IT ops team via Slack. Use Claude Sonnet 3.5 v1 on Amazon Bedrock to accurately summarize and answer questions.```<br>
 ![image](https://github.com/user-attachments/assets/413f3c6e-e726-4aaa-815a-e352f81c0701)
 
 - Agent메뉴로 복귀해서 이 Agent의 Alias 만들어 보겠습니다.<br>
-Create alias > Alias name > ```aws-chatops-workshop``` 입력합니다.
+Create alias > Alias name > ```aws-chatops-workshop``` 입력합니다.<br>
 ![image](https://github.com/user-attachments/assets/fdcc6e2f-5c93-4f6a-bf81-c4b81805d90a)
 
-- 아래와 같이 Versioning되며, Alias ID: 5OEZZ8BA7K | Alias name: aws-chatops-workshop 이 생성되었습니다. 
+- 아래와 같이 Versioning되며, Alias ID: 5OEZZ8BA7K | Alias name: aws-chatops-workshop 이 생성되었습니다.<br> 
 ![image](https://github.com/user-attachments/assets/fae22c79-10ae-4b6b-aef7-a655e452dc65)
 
 ***
