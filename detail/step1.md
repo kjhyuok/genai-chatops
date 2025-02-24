@@ -3,7 +3,7 @@
 ### 목표
 Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 구성하고, Retrieval-Augmented Generation(RAG) 워크플로를 설정합니다.<br>
 
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/b7ba91f1-cbb7-423d-897f-7408b88fa47c" /><br>
+<img width="980" alt="image" src="https://github.com/user-attachments/assets/b7ba91f1-cbb7-423d-897f-7408b88fa47c" /><br>
 
 
 >👉🏻이 Workshop의 모든 실습을 us-west-2(Oregon)에서 진행되니 AWS Console 우측 상단의 Region을 확인해 주세요.
@@ -21,7 +21,7 @@ Amazon Bedrock Knowledge Bases를 활용하여 IT 운영팀의 업무 자산을 
 ![](https://static.us-east-1.prod.workshops.aws/public/88811a7e-410e-4614-835d-b5bdc1092470/static/images/kb_details.gif)
 
 
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/44d2a571-10d2-4e97-8925-23f23cc8da05" /> 
+<img width="980" alt="image" src="https://github.com/user-attachments/assets/44d2a571-10d2-4e97-8925-23f23cc8da05" /> 
 
 **1. 페이지에서 Knowledge Bases를 클릭하고 Create<br>**
 - (선택: Create knowledge base with vector store) <br>
@@ -73,7 +73,7 @@ Key/value pairs
 [Secret name and description 은 아래와 같이 입력하고 Next로 생성완료]<br>
 Secret name: **```AmazonBedrock-DataStore-Secret```**<br>
 Secret description: **```Confluence-Wiki```**<br>
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/699f016b-6dad-478c-8356-3dde73bc9282" />
+<img width="980" alt="image" src="https://github.com/user-attachments/assets/699f016b-6dad-478c-8356-3dde73bc9282" />
 
 
 
@@ -92,11 +92,11 @@ ARN 정보 입력하기
 7. Content chunking and parsing(Parsing strategy)
 Amazon Bedrock default parser
 
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/89173112-2e09-46ef-ade4-4fcb7f0cf9a6" />
+<img width="980" alt="image" src="https://github.com/user-attachments/assets/89173112-2e09-46ef-ade4-4fcb7f0cf9a6" />
 
 9. 순차적인 sync
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/e28733e6-374e-4ef7-88d3-ef1f9f69428f" />
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/0cafddcd-9cc1-476d-a3ce-3a67875abaa9" />
+<img width="980" alt="image" src="https://github.com/user-attachments/assets/e28733e6-374e-4ef7-88d3-ef1f9f69428f" />
+<img width="980" alt="image" src="https://github.com/user-attachments/assets/0cafddcd-9cc1-476d-a3ce-3a67875abaa9" />
 
 
 > 2개의 Data Source 최초 sync까지는 약 10분\~20분이 소요됩니다. **Break Time**
@@ -104,7 +104,7 @@ Amazon Bedrock default parser
 
 ## Amazon Bedrock Knowledge Bases에 Sync 완료된 S3, Confluence 데이터 테스트 하기
 1. Amazon Bedrock Knowledge Bases 콘솔에서 테스트 해 볼 수 있습니다.
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/20634edb-6bf6-4605-9195-ed333d4eb86e" />
+<img width="980" alt="image" src="https://github.com/user-attachments/assets/20634edb-6bf6-4605-9195-ed333d4eb86e" />
 
 
 
