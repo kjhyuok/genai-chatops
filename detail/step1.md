@@ -104,7 +104,9 @@ Secret description: **```Confluence-Wiki```**<br>
 ⭐️⭐️⭐️AWS Secrets Manager secret 이 부분 선행 필요!!⭐️⭐️⭐️
 ARN 정보 입력하기
 7. Content chunking and parsing(Parsing strategy)
-Amazon Bedrock default parser
+Amazon Bedrock default parser<br>
+<img width="1584" alt="image" src="https://github.com/user-attachments/assets/f81caf8d-5e72-4b6f-8210-b8faca1deb0b" />
+
 
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/89173112-2e09-46ef-ade4-4fcb7f0cf9a6" />
 
