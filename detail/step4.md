@@ -131,7 +131,7 @@ Add environment variable 에 아래와 같이 Value를 입력 후 저장합니�
 
 **2nd - AWS Lambda Function:** [chatops-stack-gw-to-slack-function 바로가기](https://us-west-2.console.aws.amazon.com/lambda/home?region=us-west-2#/functions/chatops-stack-gw-to-slack-function?tab=code)<br>
 
-🚩send_slack_message에 "<@q> ask 커넥터이름" 에서 커넥터이름을 적절하게 변경 후 **Deploy** 합니다.<br>
+🚩send_slack_message에 "<@q> ask 커넥터이름" 에서 커넥터이름을 적절하게 변경 후 **Deploy** 합니다.(127 Line)<br>
 (2025년 2월 AWS Chatbot이 Amazon Q Developer로 이름이 변경되며, 커넥터 호출방식도 @aws > @q 로 변경됨)
 ![image](https://github.com/user-attachments/assets/e985fa6e-9775-424f-bf22-1e3d74603487)
 
