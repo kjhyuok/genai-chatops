@@ -112,11 +112,12 @@ Configuration > Environment variables > Edit <br>
 ![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
 
 Add environment variable 에 아래와 같이 Value를 입력 후 저장합니다.<br>
-![image](https://github.com/user-attachments/assets/cca77b4a-1d41-4bb3-9b4b-74232ce61835)<br>
+![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)<br>
 | Key                   | Value                                                                                                                                                                                                                               |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | REGION        | ```us-west-2```                                                                                                                                                                                                               |
 | SLACK_TOKEN_SECRET     | ```wn/chatops/secret```                                                                                                                                                                                                           |
+| TZ     | ```Asia/Seoul```                                                                                                                                                                                                           |
 
 **chatops-stack-msg-to-slack-function** 을 Test 해보겠습니다.<br>
 👏👏👏우측에 Slack채널(aws-chatops-workshop)에 **chatops-stack-msg-to-slack-function** 로 부터 Erro MSG를 정상적으로 수집했습니다.<br>
@@ -139,7 +140,12 @@ Configuration > Environment variables > Edit <br>
 ![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
 
 Add environment variable 에 아래와 같이 Value를 입력 후 저장합니다.<br>
-![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)
+![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)<br>
+| Key                   | Value                                                                                                                                                                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| REGION        | ```us-west-2```                                                                                                                                                                                                               |
+| SLACK_TOKEN_SECRET     | ```wn/chatops/secret```                                                                                                                                                                                                           |
+| TZ     | ```Asia/Seoul```                                                                                                                                                                                                           |
 
 Triggers 메뉴를 보면, Amazon API Gateway와 통합되어 있는 2개를 확인할 수 있습니다.<br>
 그중 아래의 2번째 URL을 복사해서 따로 저장해 둡니다.<br>
