@@ -33,9 +33,9 @@ def lambda_handler(event, context):
 	#message_text = "our current user or role does not have access to Kubernetes objects on this EKS cluster."
 	#message_text = "Error invoking Bedrock agent: An error occurred (dependencyFailedException) when calling the InvokeAgent operation: Your request couldn't be completed. Lambda function arn:aws:lambda:us-east-1:195275662470:function:cost-action-group-8503b encountered a problem while processing request.The error message from the Lambda function is Unhandled. Check the Lambda function log for error details, then try your request again after fixing the error."
 	#message_text = "An error occurred (ClientException) when calling the RegisterTaskDefinition operation: Invalid 'cpu' setting for task."
-	#message_text = "Database connection timeout exceeded. Unable to establish a connection within the configured timeout period."
+	message_text = "Database connection timeout exceeded. Unable to establish a connection within the configured timeout period."
 	#message_text = "The maximum number of VPCs has been reached. (Service: AmazonEC2; Status Code: 400; Error Code: VpcLimitExceeded; Request ID: a12b34cd-567e-890-123f-ghi4j56k7lmn)"
-	message_text = "WAF has detected abnormal traffic patterns indicative of potential malicious activity. Immediate investigation is recommended."
+	#message_text = "WAF has detected abnormal traffic patterns indicative of potential malicious activity. Immediate investigation is recommended."
 
 	try:
 		result = client.chat_postMessage(
