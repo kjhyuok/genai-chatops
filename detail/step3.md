@@ -60,7 +60,7 @@ Slack 채널을 구성하고 AWS 서비스와 연동하여 로그 모니터링 �
 
 우측 상단에 다른워크스페이스 추가 **+** 를 선택하시면, Slack 워크스페이스에 join할 수 있는 도메인을 입력하게 됩니다.<br>
 여기서는 여러분이 앞서 생성해 놓은 워크스페이스를 입력해 주세요.<br>
-🚩(만약 앞서 생성한 aws-chatops-workshop-alias 일치하는 워크스페이스 존재 시 추가하지 마시고 그대로 선택해주세요)
+🚩(만약 앞서 생성한 aws-chatops-workshop-alias 일치하는 워크스페이스 존재 시 추가하지 마시고 그대로 선택해주세요)<br>
 워크스페이스의 Slack URL을 다음과 같이 복사해서 입력 > ```aws-chatops-workshop-본인Alias지정```
 계속을 선택하고, Amazon Q Developer가 여러분 Slack 워크스페이스에 액세스 할 수있게 **허용** 해 줍니다.<br>
 <img width="680" alt="image" src="https://github.com/user-attachments/assets/3d0da647-03ae-4425-8856-4d49aac3b965" />
