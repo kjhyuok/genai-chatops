@@ -112,7 +112,11 @@ Configuration > Environment variables > Edit <br>
 ![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
 
 Add environment variable 에 아래와 같이 Value를 입력 후 저장합니다.<br>
-![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)
+![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)<br>
+| Key                   | Value                                                                                                                                                                                                                               |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| REGION        | ```us-west-2```                                                                                                                                                                                                               |
+| SLACK_TOKEN_SECRET     | ```wn/chatops/secret```                                                                                                                                                                                                           |
 
 **chatops-stack-msg-to-slack-function** 을 Test 해보겠습니다.<br>
 👏👏👏우측에 Slack채널(aws-chatops-workshop)에 **chatops-stack-msg-to-slack-function** 로 부터 Erro MSG를 정상적으로 수집했습니다.<br>
