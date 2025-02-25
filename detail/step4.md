@@ -172,7 +172,10 @@ Basic Information 페이지의 Interactivity & Shortcuts 메뉴를 On으로 변�
 ![image](https://github.com/user-attachments/assets/9448b528-4efc-473a-a0eb-b4f95a61bcaa)
 
 ### Usecase2:
-**Connector** 를 추가 호출하면서 좀 더 구체적인 질문도 해봅니다.
+**Connector** 를 추가 호출하면서 좀 더 구체적인 질문도 해봅니다.<br>
+@Amazon Q ask 커넥터이름 wiki에서 CloudFront와 WAF 연동에 대해서 확인해줘<br>
+@Amazon Q ask 커넥터이름 wiki에서 SQL Injection 공격 탐지 실패 확인해줘<br>
+
 ![image](https://github.com/user-attachments/assets/73c86b0d-fa0b-4c66-8f92-4043b32602aa)
 
 ### Usecase3:
