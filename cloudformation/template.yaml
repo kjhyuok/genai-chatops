@@ -164,7 +164,7 @@ Resources:
           - Effect: Allow
             Principal:
               Service: 
-                - lambda.amazonaws.com
+                - chatbot.amazonaws.com
             Action: 
               - sts:AssumeRole
       ManagedPolicyArns:
