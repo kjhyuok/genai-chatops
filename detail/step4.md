@@ -112,7 +112,7 @@ Configuration > Environment variables > Edit <br>
 ![image](https://github.com/user-attachments/assets/dad985cd-7a87-4ef6-8dd5-31e673992b47)
 
 Add environment variable 에 아래와 같이 Value를 입력 후 저장합니다.<br>
-![image](https://github.com/user-attachments/assets/2cddd996-6d68-460f-a687-e9a8306be0f1)<br>
+![image](https://github.com/user-attachments/assets/cca77b4a-1d41-4bb3-9b4b-74232ce61835)<br>
 | Key                   | Value                                                                                                                                                                                                                               |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | REGION        | ```us-west-2```                                                                                                                                                                                                               |
