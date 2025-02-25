@@ -139,6 +139,7 @@ Slack에서 Amazon Q를 통해서 Bedrock Agent를 호출하는 방법입니다.
 [Sample Question]<br>
 1. @amazon Q ask JKF 최근 네트워크 관련 장애 내역을 알려줘<br>
 2. @amazon Q ask JKF 이 에러메시지를 분석해줘 The maximum number of VPCs has been reached. (Service: AmazonEC2; Status Code: 400; Error Code: VpcLimitExceeded; Request ID: a12b34cd-567e-890-123f-ghi4j56k7lmn)<br>
+3. @Amazon Q ask JKF 지금 SQL Injection 공격 들어온거 같은데 과거이력을 참고해서 가이드 해줄래?<br>
 
 - 같은 방식으로 몇개의 질문을 던져봤더니 Step1에서 연동했던 Amazon Bedrock Knowledgebases 로 부터 동기화된 Atlassian Confluence 등록 게시글 정보를 잘 가져왔습니다.<br>
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/605b036b-3f99-47d6-8ee9-e0ccedbc576e" />
