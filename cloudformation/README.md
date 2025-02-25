@@ -30,7 +30,7 @@ chmod +x ./deploy.sh
 # 실행 결과확인
 1. AWS Console > CloudFormation 이동합니다.
 
-2. chatops-stack 스택이 CREATE_COMPLETE 을 확인하고, Outputs 에서 API Gateway, S3 등 완성한 리소스를 확인할 수 있습니다.
+2. chatops-stack 스택이 CREATE_COMPLETE 을 확인하고, Outputs 에서 AWS Lambda Execution IAM Role, Amazon API Gateway, Amazon S3 등 완성한 리소스를 확인할 수 있습니다.
 
 <img width="980" alt="image" src="https://github.com/user-attachments/assets/907fae2e-7b8a-4f29-88eb-72089b496d75" />
 
