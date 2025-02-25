@@ -33,7 +33,8 @@ Amazon Bedrock Agent를 생성하고, 이전 단계에서 구성한 Knowledge Ba
 </details>
 
 - 바로 아래에 Additional settings에서는 Enabled 선택합니다.<br>
-(Agent가 사용자와 Interaction중에 충분한 정보가 없는 경우 Agent가 사용자에게 추가 정보를 요청할 수 있도록 지원 합니다.)
+(Agent가 사용자와 Interaction중에 충분한 정보가 없는 경우 Agent가 사용자에게 추가 정보를 요청할 수 있도록 지원 합니다.)<br>
+우선 여기까지 설정 하고 **저장 후 종료** 합니다.<br>
 ![image](https://github.com/user-attachments/assets/5e2661bb-c5e3-45a1-bff2-6ddae6ebc9fc)
 
 - 우측 Test창에서 Agent가 정상적으로 설정되었는지 Prepare 를 선택<br>
