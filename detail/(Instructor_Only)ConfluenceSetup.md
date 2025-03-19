@@ -5,7 +5,7 @@ b. Slack Thread에 있는 내용을 Reporting되는 Space로 활용<br>
 
 Lab4.AWS 서비스와 솔루션(Slack, Confluence)연결을 위해서 Workshop을 진행하시는 Instructor께서는 Atlassian Confluence(무료버전)에 가입해서 스페이스를 생성해 두고, 실습자들의 Amazon Bedrock을 활용한 Slack Thread 요약이 Reporting 될 수 있도록 사전에 준비해 주세요.(약 15분의 사전준비과정)
 실습을 위해 아래를 준비하여 실습에 참여한 분들께 제공해 드려야 합니다:
-- 실습용 Atlassian Confluence 무료버전 생성(URL, ID, PW)
+- 실습용 Atlassian Confluence 무료버전 생성(URL, USERID)
 - 스페이스와 페이지 생성(페이지ID)
 - API 토큰 발급(API 토큰값)
 
@@ -71,20 +71,19 @@ Workshop 참가자들이 다수일 경우 이 API토큰을 넉넉하게 만들�
 ![image](https://github.com/user-attachments/assets/04b4013c-85e6-495b-8f8f-6e540cebc671)
 
 
+이제 Workshop을 위한 사전 준비는 완료 되었으니 생성한 아래의 값들을 참가자들에게 제공해 주시면 됩니다.
+Lab1-3. Knowledge Base와 데이터소스 연결(Confluence) 과정
+(URL, USERID)
+
+![image](https://github.com/user-attachments/assets/bc748f34-5749-4d1f-8087-764aad189029)
+
+Lab4-2. AWS Secret Manager로 Key 암호화
+![image](https://github.com/user-attachments/assets/66d45547-1850-4f86-abdb-1590227760ea)
 
 
+---
 
-
-스페이스를 만들었고 Reporting 이 게시될 페이지를 만들었는데
-
-
-
-3-1. 생성한 스페이스의 이름은 Workshop을 수행하는 분들의 자동생성된 Lambda(gw-to-slack)의 2곳과 동일해야 합니다.
-
-
-3-2. 
-
-3. Confluence에 Sample Reporting 등록하기
+(Option) Confluence에 Sample Reporting 등록하기
 최초 생성된 Confluence에는 Amazon Bedrock Knowledge Bases에 임베딩 할만한 Reporting 자료가 없습니다. 실습 방법에 따라서 2가지의 방법이 사전에 필요합니다.<br>
    3-1. Instructor가 사전에 참조할 Sample Reporting 게시글을 아래에서 다운받아서 Confluence에 업로드 해 주시거나<br>
    SampleReporting Download 
