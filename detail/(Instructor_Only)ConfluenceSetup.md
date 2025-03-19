@@ -39,8 +39,6 @@ Slack Thread의 대화내용이나 장애내역이 요약되어 Reporting될 스
 
 
 3-1. 생성한 스페이스의 이름은 Workshop을 수행하는 분들의 자동생성된 Lambda(gw-to-slack)의 2곳과 동일해야 합니다.
-**ops_knowledge_bases**_
-
 
 
 3-2. 
