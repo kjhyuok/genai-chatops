@@ -21,6 +21,9 @@ Confluence에 최초 진입 후 건너뛰기 > 완료 합니다.
 3. 스페이스 생성하기
 Slack Thread의 대화내용이나 장애내역이 요약되어 Reporting될 스페이스를 하나 생성합니다.
 - issuehistory 로 기재하며, 스페이스 키 역시 동일하게 issuehistory 로 입력 합니다. 이 스페이스 키 값은 Workshop에서 자동생성된 Lambda(gw-to-slack)에 2곳에 동일하게 이미 입력되어 있습니다.
+![image](https://github.com/user-attachments/assets/6345ac02-3dce-4035-b4e1-21e3dbfb8303)
+![image](https://github.com/user-attachments/assets/95abbbb8-ffb5-4fea-8f95-b15e5de88d1b)
+
 
 <img width="1283" alt="image" src="https://github.com/user-attachments/assets/68d7f1b1-5af5-4cc2-86e5-09ba0c208a66" />
 
@@ -37,8 +40,7 @@ Slack Thread의 대화내용이나 장애내역이 요약되어 Reporting될 스
 
 3-1. 생성한 스페이스의 이름은 Workshop을 수행하는 분들의 자동생성된 Lambda(gw-to-slack)의 2곳과 동일해야 합니다.
 **ops_knowledge_bases**_
-![image](https://github.com/user-attachments/assets/48531582-7f8a-46ae-a63c-61d973c0be7d)
-![image](https://github.com/user-attachments/assets/c5fd3a2d-a95e-4c59-a06e-32fa89bfae61)
+
 
 
 3-2. 
