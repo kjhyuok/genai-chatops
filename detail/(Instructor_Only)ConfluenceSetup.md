@@ -85,10 +85,5 @@ Lab4-2. AWS Secret Manager로 Key 암호화
 
 (Option) Confluence에 Sample Reporting 등록하기
 최초 생성된 Confluence에는 Amazon Bedrock Knowledge Bases에 임베딩 할만한 Reporting 자료가 없습니다. 실습 방법에 따라서 2가지의 방법이 사전에 필요합니다.<br>
-   3-1. Instructor가 사전에 참조할 Sample Reporting 게시글을 아래에서 다운받아서 Confluence에 업로드 해 주시거나<br>
-   SampleReporting Download 
-   3-2. Amazon Bedrock Knowledge Bases를 S3로만 임베딩 하고 Reporting만 Confluence에 하시는 것을 권장 드립니다.<br>
-
-5. 
-
-6. 
+   3-1. Instructor가 사전에 Knowledge Bases로 활용할 Doc등의 자료를 Confluence에 업로드 해 주시거나<br>
+   3-2. Amazon Bedrock Knowledge Bases를 Amazon S3에만 Doc나 기타자료를 임베딩 하고 Reporting 용도로만 Confluence을 실습에 활용 하시는 것을 권장 드립니다.<br>
