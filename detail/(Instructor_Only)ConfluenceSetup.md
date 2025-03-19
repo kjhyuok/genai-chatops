@@ -20,9 +20,10 @@ Confluence에 최초 진입 후 건너뛰기 > 완료 합니다.
 
 3. 스페이스 생성하기
 Slack Thread의 대화내용이나 장애내역이 요약되어 Reporting될 스페이스를 하나 생성합니다.
-> ops_knowledge_bases 로 기재 합니다.
+- issuehistory 로 기재하며, 스페이스 키 역시 동일하게 issuehistory 로 입력 합니다. 이 스페이스 키 값은 Workshop에서 자동생성된 Lambda(gw-to-slack)에 2곳에 동일하게 이미 입력되어 있습니다.
 
-![image](https://github.com/user-attachments/assets/8383a180-2748-4d19-91be-f538b99cfa6f)
+<img width="1283" alt="image" src="https://github.com/user-attachments/assets/68d7f1b1-5af5-4cc2-86e5-09ba0c208a66" />
+
 
 > 부가적인 기능을 모두 제거하고 생성합니다.
 
