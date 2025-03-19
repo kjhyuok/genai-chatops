@@ -25,15 +25,17 @@ Slack Thread의 대화내용이나 장애내역이 요약되어 Reporting될 스
 ![image](https://github.com/user-attachments/assets/8383a180-2748-4d19-91be-f538b99cfa6f)
 
 > 부가적인 기능을 모두 제거하고 생성합니다.
+
 ![image](https://github.com/user-attachments/assets/411df5bb-8a2c-4241-abe3-2b387f37a311)
 
 > Reporting 게시글이 업로드 될 페이지를 하나 생성합니다. 임의로 _Issue reported from Slack_
+
 ![image](https://github.com/user-attachments/assets/93bc6ca1-b7b6-47ad-916e-1004d4180138)
 
 
 
-3-1. 이 스페이스의 이름은 Workshop을 수행하는 분들 Lambda(gw-to-slack)의 2곳에 반영되어야 합니다.
-
+3-1. 생성한 스페이스의 이름은 Workshop을 수행하는 분들의 자동생성된 Lambda(gw-to-slack)의 2곳과 동일해야 합니다.
+**ops_knowledge_bases**_
 ![image](https://github.com/user-attachments/assets/82997439-566d-4dd4-8701-4775a6269f7c)
 ![image](https://github.com/user-attachments/assets/845c0610-2df8-49d1-a5c7-3ab0a1db2702)
 
