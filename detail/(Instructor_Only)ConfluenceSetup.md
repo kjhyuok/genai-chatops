@@ -18,11 +18,26 @@ Lab4.AWS 서비스와 솔루션(Slack, Confluence)연결을 위해서 Workshop�
 Confluence에 최초 진입 후 건너뛰기 > 완료 합니다.
 <img width="1470" alt="image" src="https://github.com/user-attachments/assets/3a851e34-3b28-46a5-b3c6-c0f1f1ae81ad" />
 
-
 3. 스페이스 생성하기
-Slack으로 부터 대화내용 및 장애내역이 요약되어 Reporting될 스페이스를 하나 생성합니다. 이 스페이스의 이름은 Lambda(gw-to-slack)에 Hard coding 되어야 하며, 
+Slack Thread의 대화내용이나 장애내역이 요약되어 Reporting될 스페이스를 하나 생성합니다.
+> ops_knowledge_bases 로 기재 합니다.
+
+![image](https://github.com/user-attachments/assets/8383a180-2748-4d19-91be-f538b99cfa6f)
+
+> 부가적인 기능을 모두 제거하고 생성합니다.
+![image](https://github.com/user-attachments/assets/411df5bb-8a2c-4241-abe3-2b387f37a311)
+
+> Reporting 게시글이 업로드 될 페이지를 하나 생성합니다. 임의로 _Issue reported from Slack_
+![image](https://github.com/user-attachments/assets/93bc6ca1-b7b6-47ad-916e-1004d4180138)
 
 
+
+3-1. 이 스페이스의 이름은 Workshop을 수행하는 분들 Lambda(gw-to-slack)의 2곳에 반영되어야 합니다.
+
+![image](https://github.com/user-attachments/assets/82997439-566d-4dd4-8701-4775a6269f7c)
+![image](https://github.com/user-attachments/assets/845c0610-2df8-49d1-a5c7-3ab0a1db2702)
+
+3-2. 
 
 3. Confluence에 Sample Reporting 등록하기
 최초 생성된 Confluence에는 Amazon Bedrock Knowledge Bases에 임베딩 할만한 Reporting 자료가 없습니다. 실습 방법에 따라서 2가지의 방법이 사전에 필요합니다.<br>
