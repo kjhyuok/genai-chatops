@@ -10,11 +10,11 @@ echo "Updating Lambda function code..."
 aws lambda update-function-code \
     --function-name $LAMBDA_FUNCTION_NAME_1 \
     --zip-file fileb://lambda-gw-to-slack.zip \
-    --region $REGION
+    --region $REGION > /dev/null
 
 aws lambda update-function-code \
     --function-name $LAMBDA_FUNCTION_NAME_2 \
     --zip-file fileb://lambda-message-to-slack.zip \
-    --region $REGION
+    --region $REGION > /dev/null
 
 echo "Deployment completed successfully!"
