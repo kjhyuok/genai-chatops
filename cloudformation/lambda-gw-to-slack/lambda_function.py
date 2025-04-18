@@ -69,7 +69,7 @@ def create_confluence_page(content):
         space="issuehistory",
         title=f"slack reporting - {datetime.now().strftime('%Y.%m.%d %H:%M')}",
         body="(Amazon Bedrock에 의해 요약 작성된 내용입니다.)<br><br>" + content.replace("\n", "<br>"),
-        parent_id="66184"
+        parent_id="98657"
     )
     return response.get("id")
 
@@ -77,7 +77,7 @@ def invoke_bedrock_agent(input_text, analysis_type, session_id):
     print("session_id : ", session_id)
     prompts = {
         'analysis': "Please analyze the following error. All conversations should be in Korean: ",
-        'summary': "Summarize the following conversation. Include information about the cause, status of the solution, and involved participants: "
+        'summary': "Summarize the following conversation. This summary should include information about the cause and progress, solution, status, and relevant participants so that the issue can be reviewed later, and be in Korean in all languages.: "
     }
     client = session.client('bedrock-agent-runtime', region_name='us-west-2', config=botocore.config.Config(read_timeout=900, connect_timeout=900, retries={"max_attempts": 0}))
     try:
