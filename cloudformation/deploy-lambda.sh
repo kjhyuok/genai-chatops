@@ -5,7 +5,7 @@ GITHUB_REPO="https://github.com/kjhyuok/genai-chatops"
 LOCAL_DIR="genai-chatops"
 LAMBDA_FUNCTION_NAME_1="chatops-gw-to-slack-function"
 LAMBDA_FUNCTION_NAME_2="chatops-msg-to-slack-function"
-REGION="us-east-1"  # AWS 리전
+REGION="us-west-2"  # AWS 리전
 
 # 1. GitHub에서 소스 클론
 echo "Cloning repository from GitHub..."
